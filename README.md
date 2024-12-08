@@ -1,5 +1,11 @@
 # Source Code of YouTube Shorts
 
+<a href="https://github.com/shahzadamodassir"><img src="https://img.shields.io/badge/Author-Shahzada%20Modassir-%2344cc11?style=flat-square"/></a>
+<a href="LICENSE"><img src="https://img.shields.io/github/license/shahzadamodassir/shorts?style=flat-square"/></a>
+
+<a href="https://github.com/shahzadamodassir/shorts/stargazers"><img src="https://img.shields.io/github/stars/shahzadamodassir/shorts?style=flat-square"/></a>
+<a href="https://github.com/shahzadamodassir/shorts/graphs/contributors"><img src="https://img.shields.io/github/contributors/shahzadamodassir/shorts?style=flat-square" alt="Contributors"></a>
+
 ```js
 /**
  * Generate Random Numeric OTP

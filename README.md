@@ -1,9 +1,8 @@
 # Source Code of YouTube Shorts
 
-<a href="https://github.com/shahzadamodassir"><img src="https://img.shields.io/badge/Author-Shahzada%20Modassir-%2344cc11?style=flat-square"/></a>
-<a href="LICENSE"><img src="https://img.shields.io/github/license/shahzadamodassir/shorts?style=flat-square"/></a>
-<a href="https://github.com/shahzadamodassir/shorts/stargazers"><img src="https://img.shields.io/github/stars/shahzadamodassir/shorts?style=flat-square"/></a>
-<a href="https://github.com/shahzadamodassir/shorts/graphs/contributors"><img src="https://img.shields.io/github/contributors/shahzadamodassir/shorts?style=flat-square" alt="Contributors"></a>
+[![YouTube Views](https://img.shields.io/youtube/channel/views/UCzo3rbUc4Yr1C-Zv9B9nfKw?style=flat-square&logo=youtube)](https://youtube.com/@shahzadamodassir)
+[![YouTube Subscribers](https://img.shields.io/youtube/channel/subscribers/UCzo3rbUc4Yr1C-Zv9B9nfKw?style=flat-square&logo=youtube)](https://youtube.com/@shahzadamodassir)
+[![Github Followers](https://img.shields.io/github/followers/shahzadamodassir?style=flat-square&logo=github)](https://github.com/shahzadamodassir?tab=followers)
 
 ```js
 /**

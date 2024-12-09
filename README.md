@@ -9,6 +9,70 @@
 
 ```js
 /**
+ * array_combine — Creates an object by using one array for keys
+ * and another for its values
+ */
+Array.prototype.combine = function(values) {
+  return array_combine(this, values);
+};
+
+/**
+ * array_combine — Creates an object by using one array for keys
+ * and another for its values
+ * 
+ * @param {array} keys
+ * @param {array} values
+ * @returns Combined object with keys and values
+ */
+function array_combine(keys, values) {
+  if (keys.length !== values.length) {
+    throw new Error('array_combine method require must have the same number of elements.');
+  }
+
+  return values.reduce((comb, val, i) => (comb[keys[i]] = val, comb), {});
+}
+
+// Example usage:
+const keys = ['IN','US','RU'];
+const values = ['India','United States','Russia'];
+
+keys.combine(values);        // Outputs: {IN: 'India', US: 'United States', RU: 'Russia'}
+array_combine(keys, values); // Outputs: {IN: 'India', US: 'United States', RU: 'Russia'}
+```
+
+```js
+/**
+ * object_flip — Exchanges all keys with their object values in
+ * an array or object in Javascript
+ */
+Object.prototype.flip = function() {
+  return object_flip(this);
+};
+
+/**
+ * object_flip — Exchanges all keys with their object values in
+ * an array or object in Javascript
+ * 
+ * @param {array|object} obj
+ * @returns flipped object
+ */
+function object_flip(obj) {
+  return Object.entries(obj).reduce((flip, [key, value]) => (flip[value] = key, flip), {});
+}
+
+// Example usage:
+const ext1 = ['zero','one','two','three','four'];
+const ext2 = {IN: 'India', US: 'United States'};
+
+ext1.flip();       // Outputs: {zero: 0, one: 1, two: 2, three: 3, four: 4}
+object_flip(ext1); // Outputs: {zero: 0, one: 1, two: 2, three: 3, four: 4}
+
+ext2.flip();       // Outputs: {India: 'IN', 'United States': 'US'}
+object_flip(ext2); // Outputs: {India: 'IN', 'United States': 'US'}
+```
+
+```js
+/**
  * Generate Random Numeric OTP
  * @param {number} length
  * @returns A random generated OTP

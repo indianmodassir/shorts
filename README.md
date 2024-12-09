@@ -7,6 +7,9 @@
 [![Github Followers](https://img.shields.io/github/followers/shahzadamodassir?style=flat-square&logo=github)](https://github.com/shahzadamodassir?tab=followers)
 [![X](https://img.shields.io/twitter/follow/Xsmodassir?style=flat-square&logo=x&color=%2300000000)](https://x.com/Xsmodassir)
 
+## Javascript Shorts Source
+Watch all Javascript shorts video on youtube see playlist [Javascript Shorts](https://youtube.com/playlist?list=PLnnLdunPzY2s16kDzbhDfX9tAsGFRHpGJ&si=EES3tAT0i0DybXik)
+
 ```js
 /**
  * array_combine — Creates an object by using one array for keys
@@ -70,6 +73,114 @@ object_flip(ext1); // Outputs: {zero: 0, one: 1, two: 2, three: 3, four: 4}
 ext2.flip();       // Outputs: {India: 'IN', 'United States': 'US'}
 object_flip(ext2); // Outputs: {India: 'IN', 'United States': 'US'}
 ```
+
+```js
+/**
+ * Creates an ucwords method in Javascript,
+ * To UpperCase the first character of each word in a string
+ */
+String.prototype.ucwords = function(separator) {
+  return toWords(this, separator, true);
+};
+
+/**
+ * Creates an lcwords method in Javascript,
+ * To LowerCase the first character of each word in a string
+ */
+String.prototype.lcwords = function(separator) {
+  return toWords(this, separator, false);
+};
+
+/**
+ * @internal
+ * Uppercase or Lowercase the first character of each word in a string
+ * @param {string}  str
+ * @param {string}  separator
+ * @param {boolean} isUpper
+ * @returns Uppercase or Lowercase first character of each word
+ */
+function toWords(str, separator, isUpper) {
+  let rChar = /(?=[^\w\s])/g,
+    matcher,
+    regex,
+    switchCase = function(char) {
+      return isUpper ? char.toUpperCase() : char.toLowerCase();
+    };
+
+  str = switchCase(str[0]) + str.slice(1);
+  separator = separator != null && separator.replace(rChar, "\\") || "\\x20\\t\\r\\n\\f\\v";
+  matcher = "(?<=[" + separator + "])";
+  regex = new RegExp(matcher.concat("(.)"), "g");
+  
+  return str.replace(regex, function(_, char) {
+    return switchCase(char);
+  });
+}
+
+// Example usage:
+const str1 = 'hello world!, hello-world!, hello_world!';
+const str2 = str1.toUpperCase();
+
+str1.ucwords();      // Outputs: 'Hello World!, Hello-world!, Hello_world!'
+str1.lcwords();      // Outputs: 'hELLO wORLD!, hELLO-WORLD!, hELLO_WORLD!'
+
+str1.ucwords(' -_'); // Outputs: 'Hello World!, Hello-World!, Hello_World!'
+str1.lcwords(' -_'); // Outputs: 'hELLO wORLD!, hELLO-wORLD!, hELLO_wORLD!'
+```
+
+```js
+/**
+ * Calculate the sum of values in array
+ */
+Array.prototype.sum = function() {
+  return array_sum(this);
+};
+
+/**
+ * Calculate the sum of values in array
+ * @param {array} arr
+ * @return Calculated sum values
+ */
+function array_sum(arr) {
+  return arr.reduce(function(sum, cur) {
+    return sum + (parseFloat(cur) || 0);
+  }, 0);
+}
+
+// Example usage:
+const arr = [1,2,3,'1px','2px','50%','100%','22.345',445.34];
+
+arr.sum();      // Outputs: 626.685
+array_sum(arr); // Outputs: 626.685
+```
+
+```js
+/**
+ * Calculate the product of values in array
+ */
+Array.prototype.product = function() {
+  return array_product(this);
+};
+
+/**
+ * Calculate the product of values in array
+ * @param {array} arr
+ * @return Calculated product values
+ */
+function array_product(arr) {
+  return arr.reduce(function(product, cur) {
+    return (product * (parseFloat(cur) || 0)).toFixed(2);
+  }, 1);
+}
+
+// Example usage:
+const arr = [1,2,3,'3px','5px','55.23%','32.44'];
+
+arr.product();      // Outputs: 161249.51
+array_product(arr); // Outputs: 161249.51
+```
+
+
 
 ```js
 /**

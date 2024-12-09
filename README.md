@@ -5,10 +5,14 @@
 [![YouTube Views](https://img.shields.io/youtube/channel/views/UCzo3rbUc4Yr1C-Zv9B9nfKw?style=flat-square&logo=youtube)](https://youtube.com/@shahzadamodassir)
 [![YouTube Subscribers](https://img.shields.io/youtube/channel/subscribers/UCzo3rbUc4Yr1C-Zv9B9nfKw?style=flat-square&logo=youtube)](https://youtube.com/@shahzadamodassir)
 [![Github Followers](https://img.shields.io/github/followers/shahzadamodassir?style=flat-square&logo=github)](https://github.com/shahzadamodassir?tab=followers)
+[![Javascript](https://img.shields.io/badge/JAVASCRIPT-%23F7DF1E?style=flat-square&logo=JAVASCRIPT&labelColor=%23333)](https://)
 [![X](https://img.shields.io/twitter/follow/Xsmodassir?style=flat-square&logo=x&color=%2300000000)](https://x.com/Xsmodassir)
+
 
 ## Javascript Shorts Source
 Watch all Javascript shorts video on youtube see playlist [Javascript Shorts](https://youtube.com/playlist?list=PLnnLdunPzY2s16kDzbhDfX9tAsGFRHpGJ&si=EES3tAT0i0DybXik)
+
+### array_combine
 
 ```js
 /**
@@ -180,22 +184,6 @@ arr.product();      // Outputs: 161249.51
 array_product(arr); // Outputs: 161249.51
 ```
 
-
-
-```js
-/**
- * Generate Random Numeric OTP
- * @param {number} length
- * @returns A random generated OTP
- */
-function generateOTP(length) {
-  return String(Math.floor(Math.random() * Math.pow(10, length))).padStart(length, '0');
-}
-
-// Generate OTP of 6-digits
-generateOTP(6); // Outputs: 991229
-```
-
 ```js
 /**
  * Convert Decimal to Octal
@@ -260,4 +248,30 @@ function hexdec(hex) {
 // Example usage:
 dechex(16777215); // Outputs: 'ffffff'
 hexdec('ffffff'); // Outputs: 16777215
+```
+
+### generatedOTP
+
+[![Shorts Views](https://img.shields.io/youtube/views/_F8gi5beA5o?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/_F8gi5beA5o)
+[![Shorts Likes](https://img.shields.io/youtube/likes/_F8gi5beA5o?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/_F8gi5beA5o)
+[![Shorts Comments](https://img.shields.io/youtube/comments/_F8gi5beA5o?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/_F8gi5beA5o)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/_F8gi5beA5o)
+
+**Parameters:**
+- `length` [&lt;string&gt;](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type)
+- Returns: [&lt;int&gt;](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#number_type)
+
+```js
+/**
+ * Generate Random Numeric OTP
+ * @param {number} length
+ * @returns A random generated OTP
+ */
+function generateOTP(length) {
+  return String(Math.floor(Math.random() * Math.pow(10, length))).padStart(length, '0');
+}
+
+// Generate OTP of 6-digits
+generateOTP(6); // Outputs: 991229
 ```

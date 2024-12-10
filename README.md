@@ -15,6 +15,38 @@
 
 Watch all Javascript shorts video on youtube see playlist [Javascript Shorts](https://youtube.com/playlist?list=PLnnLdunPzY2s16kDzbhDfX9tAsGFRHpGJ&si=EES3tAT0i0DybXik)
 
+### Filter odd & even
+
+[![Shorts Views](https://img.shields.io/youtube/views/tDIaHnmRUVk?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/tDIaHnmRUVk)
+[![Shorts Likes](https://img.shields.io/youtube/likes/tDIaHnmRUVk?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/tDIaHnmRUVk)
+[![Shorts Comments](https://img.shields.io/youtube/comments/tDIaHnmRUVk?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/tDIaHnmRUVk)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/tDIaHnmRUVk)
+
+```js
+/**
+ * odd — Filter odd values in an array
+ * @param {array} arr
+ * @returns array with odd values
+ */
+function odd(arr) {
+  return arr.filter(num => num % 2);
+}
+
+/**
+ * even — Filter even values in an array
+ * @param {array} arr
+ * @returns array with even values
+ */
+function even(arr) {
+  return arr.filter(num => (num + 1) % 2);
+}
+
+// Example usage:
+odd([1,2,3,4,5,6,7,8,9]);  // Outputs: [1,3,5,7,9]
+even([1,2,3,4,5,6,7,8,9]); // Outputs: [2,4,6,8]
+```
+
 ### array_combine
 
 [![Shorts Views](https://img.shields.io/youtube/views/bAblJ4y5hJ0?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/bAblJ4y5hJ0)
@@ -223,6 +255,86 @@ const arr = [1,2,3,'3px','5px','55.23%','32.44'];
 
 arr.product();      // Outputs: 161249.51
 array_product(arr); // Outputs: 161249.51
+```
+
+### min
+
+[![Shorts Views](https://img.shields.io/youtube/views/7qU-UC0WGkk?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/7qU-UC0WGkk)
+[![Shorts Likes](https://img.shields.io/youtube/likes/7qU-UC0WGkk?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/7qU-UC0WGkk)
+[![Shorts Comments](https://img.shields.io/youtube/comments/7qU-UC0WGkk?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/7qU-UC0WGkk)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/7qU-UC0WGkk)
+
+```js
+/**
+ * min — Array to look through or first value to compare Find lowest value
+ * @param {array} arr
+ * @returns lowest value
+ */
+function min(arr) {
+  return Math.min.apply(null, arr);
+}
+
+// Example usage:
+const arr = [100,343,232,433,54544,33,3343,23];
+min(arr); // Outputs: 23
+```
+
+### max
+
+[![Shorts Views](https://img.shields.io/youtube/views/kfmyvgnnlZs?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/kfmyvgnnlZs)
+[![Shorts Likes](https://img.shields.io/youtube/likes/kfmyvgnnlZs?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/kfmyvgnnlZs)
+[![Shorts Comments](https://img.shields.io/youtube/comments/kfmyvgnnlZs?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/kfmyvgnnlZs)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/kfmyvgnnlZs)
+
+```js
+/**
+ * max — Array to look through or first value to compare Find heighest value
+ * @param {array} arr
+ * @returns heighest value
+ */
+function max(arr) {
+  return Math.max.apply(null, arr);
+}
+
+// Example usage:
+const arr = [100,343,232,433,54544,33,3343,23];
+max(arr); // Outputs: 54544
+```
+
+### randomEmail
+
+[![Shorts Views](https://img.shields.io/youtube/views/vHgV_T1q0hE?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/vHgV_T1q0hE)
+[![Shorts Likes](https://img.shields.io/youtube/likes/vHgV_T1q0hE?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/vHgV_T1q0hE)
+[![Shorts Comments](https://img.shields.io/youtube/comments/vHgV_T1q0hE?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/vHgV_T1q0hE)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/vHgV_T1q0hE)
+
+```js
+/**
+ * randomEmail — Generates a random fake email
+ * @param {string} domain [optional]
+ * @returns random fake email address
+ */
+function randomEmail(domain) {
+  let suffix = Math.floor(Math.random() * Math.pow(4, 6)),
+    alpha = 'abcdefghijklmnopqrstuvwxyz',
+    username = '',
+    i = 0;
+
+  domain = suffix + '@' + (domain || 'gmail.com');
+
+  for(; i < 12; i++) {
+    username += alpha[Math.floor(Math.random() * alpha.length)];
+  }
+
+  return username + domain;
+}
+
+// Example usage:
+randomEmail();           // Outputs: 'psskyxrmtyve762@gmail.com'
+randomEmail('user.com'); // Outputs: 'psskyxrmtyve762@user.com'
 ```
 
 ### dateFormat

@@ -434,7 +434,7 @@ Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/
 
 ```js
 /**
- * getFlag — To create a flag using regional indicator symbols
+ * getFlag — To create a country flag generator using regional indicator symbols
  * @param {string} code
  * @return country flag
  */

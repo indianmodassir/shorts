@@ -15,6 +15,34 @@
 
 Watch all Javascript shorts video on youtube see playlist [Javascript Shorts](https://youtube.com/playlist?list=PLnnLdunPzY2s16kDzbhDfX9tAsGFRHpGJ&si=EES3tAT0i0DybXik)
 
+### dashCase
+
+```js
+```
+
+### camelCase
+
+```js
+/**
+ * Converts a string with a specified separator into camelCase format.
+ * @param {string} str input string
+ * @param {string} sep The character
+ * @returns camelCase format.
+ */
+function camelCase(str, sep) {
+  let rdashAlpha = new RegExp('[' + (sep || '-') + ']([a-z])', 'g');
+
+  return str.toLowerCase().replace(rdashAlpha, function(_, char) {
+    return char.toUpperCase();
+  });
+}
+
+// Example usage:
+camelCase('font-size: 11px;'); // Outputs: fontSize: 11px;
+camelCase('hello woRld', ' '); // Outputs: helloWorld
+camelCase('hello_world', '_'); // Outputs: helloWorld
+```
+
 ### Filter odd & even
 
 [![Shorts Views](https://img.shields.io/youtube/views/tDIaHnmRUVk?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/tDIaHnmRUVk)

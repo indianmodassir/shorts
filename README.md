@@ -15,6 +15,28 @@
 
 Watch all Javascript shorts video on youtube see playlist [Javascript Shorts](https://youtube.com/playlist?list=PLnnLdunPzY2s16kDzbhDfX9tAsGFRHpGJ&si=EES3tAT0i0DybXik)
 
+### base64Encode and base64Decode
+
+```js
+/**
+ * Encode a string to Base64
+ */
+function base64Encode(string) {
+  return btoa(string);
+}
+
+/**
+ * Decode a Base64-encoded string
+ */
+function base64Decode(string) {
+  return atob(string);
+}
+
+// Example usage:
+base64Encode('Hello, World!');       // Outputs: SGVsbG8sIFdvcmxkIQ==
+base64Decode('SGVsbG8sIFdvcmxkIQ==') // Outputs: Hello, World!;
+```
+
 ### dashCase
 
 ```js
@@ -58,6 +80,59 @@ function camelCase(str, sep) {
 camelCase('font-size: 11px;'); // Outputs: fontSize: 11px;
 camelCase('hello woRld', ' '); // Outputs: helloWorld
 camelCase('hello_world', '_'); // Outputs: helloWorld
+```
+
+### ArrayDiff
+
+```js
+/**
+ * ArrayDiff Computes the difference of array
+ * @params {array} arr
+ * @params {array} target
+ * @returns The Computed array
+ */
+function ArrayDiff(arr, target) {
+  let i = 0, output = [];
+
+  for(; i < arr.length; i++) {
+    if (arr.indexOf.call(target, arr[i]) < 0) {
+      output.push(arr[i]);
+    }
+  }
+  return output;
+}
+
+// Example usage:
+const arr1 = [100,200,300,400,500];
+const arr2 = ['.','..','src/example.txt','.env'];
+
+ArrayDiff(arr1, [100,300,500]); // Outputs: [200, 400]
+ArrayDiff(arr2, ['.', '..']);   // Outputs: ['src/example.txt', '.env']
+```
+
+### objChangeKeyCase
+
+```js
+/**
+ * Changes the case of all keys in an object
+ * @param {object} obj
+ * @param {boolean} isUpper
+ * @returns Returns an object with its keys lower or uppercased
+ */
+function objChangeKeyCase(obj, isUpper) {
+  let Case = 'to' + (isUpper ? 'Upper' : 'Lower') + 'Case';
+
+  return Object.fromEntries(
+    Object.entries(obj)
+    .map(([key, val]) => [key[Case](), val])
+  );
+}
+
+// Example usage:
+const obj = {First: 1, SecOnd: 2, ThirD: 3, FOURTH: 4, fifth: 5};
+
+objChangeKeyCase(obj, true); // Outputs: {FIRST: 1, SECOND: 2, THIRD: 3, FOURTH: 4, FIFTH: 5}
+objChangeKeyCase(obj);       // Outputs: {first: 1, second: 2, third: 3, fourth: 4, fifth: 5}
 ```
 
 ### Filter odd & even

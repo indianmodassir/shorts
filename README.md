@@ -18,6 +18,23 @@ Watch all Javascript shorts video on youtube see playlist [Javascript Shorts](ht
 ### dashCase
 
 ```js
+/**
+ * Converts a string with a specified separator into dashCase format.
+ * @param {string} str input string
+ * @param {string} sep The character
+ * @returns dashCase format.
+ */
+ function dashCase(str, sep) {
+  let rAlpha = new RegExp('[' + (sep || '_ ') + ']+([A-Za-z])|([A-Z])', 'g');
+
+  return str.replace(rAlpha, '-$1$2').toLowerCase().replace(/^-/, '');
+}
+
+// Example usage:
+dashCase('textTransform'); // Outputs: text-transform
+dashCase('Hello World');   // Outputs: hello-world
+dashCase('hello_world');   // Outputs: hello-world
+dashCase('dd:mm:yy', ':'); // Outputs: dd-mm-yy
 ```
 
 ### camelCase

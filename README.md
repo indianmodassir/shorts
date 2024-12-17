@@ -15,6 +15,50 @@
 
 Watch all Javascript shorts video on youtube see playlist [Javascript Shorts](https://youtube.com/playlist?list=PLnnLdunPzY2s16kDzbhDfX9tAsGFRHpGJ)
 
+### getType
+
+[![Shorts Views](https://img.shields.io/youtube/views/?style=flat-square&logo=youtube)]()
+[![Shorts Likes](https://img.shields.io/youtube/likes/?style=flat-square&logo=youtube)]()
+[![Shorts Comments](https://img.shields.io/youtube/comments/?style=flat-square&logo=youtube)]()
+
+Watch video shorts on youtube click: [Watch Now]()
+
+```js
+/**
+ * getType function determines the precise type of the input value.
+ * @param {any} data [required]
+ * @returns {string} precise type of value as a lowercase string.
+ */
+function getType(data) {
+  let type, class2type = {};
+
+  if (data == null) {
+    return data + '';
+  }
+
+  // Populate class2type map
+  for(type of ("Boolean Number String Function Array Date RegExp Object Error Symbol").split(" ")) {
+    class2type['[object ' + type + ']'] = type.toLowerCase();
+  }
+  
+  return typeof data === "function" || typeof data === "object" ?
+    class2type[toString.call(data)] || "object" :
+      typeof data;
+}
+
+getType();                              // Outputs: undefined
+getType(new Error('Something wrong!')); // Outputs: error
+getType('Hello World!');                // Outputs: string
+getType(function() {});                 // Outputs: function
+getType(/[A-Z0-9]/);                    // Outputs: regexp
+getType([]);                            // Outputs: array
+getType({});                            // Outputs: object
+getType(189);                           // Outputs: number
+getType(true);                          // Outputs: boolean
+getType(new Date());                    // Outputs: date
+getType(Symbol('Hello World!'));        // Outputs: symbol
+```
+
 ### base64Encode and base64Decode
 
 [![Shorts Views](https://img.shields.io/youtube/views/Th9muTd5Lck?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/Th9muTd5Lck)

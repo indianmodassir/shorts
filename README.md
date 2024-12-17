@@ -46,16 +46,11 @@ function getType(data) {
       typeof data;
 }
 
-getType();                              // Outputs: undefined
+// Example usage:
 getType(new Error('Something wrong!')); // Outputs: error
 getType('Hello World!');                // Outputs: string
 getType(function() {});                 // Outputs: function
 getType(/[A-Z0-9]/);                    // Outputs: regexp
-getType([]);                            // Outputs: array
-getType({});                            // Outputs: object
-getType(189);                           // Outputs: number
-getType(true);                          // Outputs: boolean
-getType(new Date());                    // Outputs: date
 getType(Symbol('Hello World!'));        // Outputs: symbol
 ```
 

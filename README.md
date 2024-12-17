@@ -9,13 +9,19 @@
 
 ## Used Coding Languages in YT Shorts
 
-- [Javascript](#javascript-shorts-source)
+- [Javascript](#javascript-yt-shorts-source-code)
 
 ## Javascript YT Shorts Source Code
 
-Watch all Javascript shorts video on youtube see playlist [Javascript Shorts](https://youtube.com/playlist?list=PLnnLdunPzY2s16kDzbhDfX9tAsGFRHpGJ&si=EES3tAT0i0DybXik)
+Watch all Javascript shorts video on youtube see playlist [Javascript Shorts](https://youtube.com/playlist?list=PLnnLdunPzY2s16kDzbhDfX9tAsGFRHpGJ)
 
 ### base64Encode and base64Decode
+
+[![Shorts Views](https://img.shields.io/youtube/views/Th9muTd5Lck?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/Th9muTd5Lck)
+[![Shorts Likes](https://img.shields.io/youtube/likes/Th9muTd5Lck?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/Th9muTd5Lck)
+[![Shorts Comments](https://img.shields.io/youtube/comments/Th9muTd5Lck?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/Th9muTd5Lck)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/Th9muTd5Lck)
 
 ```js
 /**
@@ -39,6 +45,12 @@ base64Decode('SGVsbG8sIFdvcmxkIQ==') // Outputs: Hello, World!;
 
 ### dashCase
 
+[![Shorts Views](https://img.shields.io/youtube/views/Jr5pLw2ayjY?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/Jr5pLw2ayjY)
+[![Shorts Likes](https://img.shields.io/youtube/likes/Jr5pLw2ayjY?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/Jr5pLw2ayjY)
+[![Shorts Comments](https://img.shields.io/youtube/comments/Jr5pLw2ayjY?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/Jr5pLw2ayjY)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/Jr5pLw2ayjY)
+
 ```js
 /**
  * Converts a string with a specified separator into dashCase format.
@@ -60,6 +72,12 @@ dashCase('dd:mm:yy', ':'); // Outputs: dd-mm-yy
 ```
 
 ### camelCase
+
+[![Shorts Views](https://img.shields.io/youtube/views/UW-Mx0riyqc?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/UW-Mx0riyqc)
+[![Shorts Likes](https://img.shields.io/youtube/likes/UW-Mx0riyqc?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/UW-Mx0riyqc)
+[![Shorts Comments](https://img.shields.io/youtube/comments/UW-Mx0riyqc?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/UW-Mx0riyqc)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/UW-Mx0riyqc)
 
 ```js
 /**
@@ -83,6 +101,12 @@ camelCase('hello_world', '_'); // Outputs: helloWorld
 ```
 
 ### ArrayDiff
+
+[![Shorts Views](https://img.shields.io/youtube/views/cVXjK_8mxGM?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/cVXjK_8mxGM)
+[![Shorts Likes](https://img.shields.io/youtube/likes/cVXjK_8mxGM?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/cVXjK_8mxGM)
+[![Shorts Comments](https://img.shields.io/youtube/comments/cVXjK_8mxGM?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/cVXjK_8mxGM)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/cVXjK_8mxGM)
 
 ```js
 /**
@@ -112,10 +136,175 @@ ArrayDiff(arr2, ['.', '..']);   // Outputs: ['src/example.txt', '.env']
 
 ### Dotenv
 
+[![Shorts Views](https://img.shields.io/youtube/views/bBddXbiPjFo?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/bBddXbiPjFo)
+[![Shorts Likes](https://img.shields.io/youtube/likes/bBddXbiPjFo?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/bBddXbiPjFo)
+[![Shorts Comments](https://img.shields.io/youtube/comments/bBddXbiPjFo?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/bBddXbiPjFo)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/bBddXbiPjFo)
+
+**Step1:** Create a environment file `.env` in current directory.
+
+```conf
+DB_CONNECTION=mysql
+DB_HOST=localhost
+DB_PORT=3306
+DB_USERNAME=root
+DB_PASSWORD=
+DB_DATABASE=localdb
+```
+
+**Step2:** Create a main Dotenv loader file `Dotenv.js`
 ```js
+/**
+ * Dotenv To loads environment variables
+ */
+const path = require('path');
+const fs = require('fs');
+
+const ENV = /^[\x20]*(\w+)[\x20]*=[\x20]*(?:(["'`])((?:[^\r\n]|[\r\n])*?)(\2)|([^#\r\n]*))(?!^#)/gm;
+
+function Dotenv(dir, name) {
+  if (!(this instanceof Dotenv)) {
+    return new Dotenv(dir, name);
+  }
+
+  let matched, filePath = path.resolve(dir, name),
+    content = fs.readFileSync(filePath, {encoding: 'utf-8'});
+
+  this.entries = {};
+
+  while((matched = ENV.exec(content))) {
+    this.entries[matched[2]] = matched[5] || matched[3] || '';
+  }
+
+  return this;
+}
+
+Dotenv.prototype.load = function() {
+  Object.assign(process.env, this.entries);
+};
+
+module.exports = Dotenv;
+```
+
+**Step3:** Create a usage file where want to loads env variables LIKE `dotenv.test.js`
+
+```js
+const Dotenv = require('./dotenv');
+
+Dotenv(__dirname, '.env').load();
+
+process.env.DB_CONNECTION  // Outputs: mysql
+process.env.DB_HOST        // Outputs: localhost
+process.env.DB_PORT        // Outputs: 3306
+process.env.DB_USERNAME    // Outputs: root
+process.env.DB_PASSWORD    // Outputs: ''
+process.env.DB_DATABASE    // Outputs: localdb
+```
+
+### rgb2hex
+
+[![Shorts Views](https://img.shields.io/youtube/views/EbVut1Q0RUE?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/EbVut1Q0RUE)
+[![Shorts Likes](https://img.shields.io/youtube/likes/EbVut1Q0RUE?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/EbVut1Q0RUE)
+[![Shorts Comments](https://img.shields.io/youtube/comments/EbVut1Q0RUE?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/EbVut1Q0RUE)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/EbVut1Q0RUE)
+
+```js
+/**
+ * Convert RGB/RGBA color format to HEX color format
+ * @param {string} rgb [required]
+ * @returns Hex color code (e.g., #ff121789, #2727c9)
+ */
+function rgb2hex(rgb) {
+  var i, a, p, rgba,
+    regRgb = /^(?:rgb)(a)?\((?:(?<r>[\d]{1,3})([,\x20])(?<g>[\d]{1,3})\3(?<b>[\d]{1,3}))(?:(?=\3)[^,]\/\x20?(?<a>[\d]{1,3}(?:\.\d+)?)(?<p>%)|(?=\3),(?<A>0?\.\d+))?\)/g,
+    regCwp = /(?:(,)\x20*|(\x20)[\x20]*|;)/g,
+    hex = "#";
+
+  if (!(rgba = (regRgb.exec(rgb.replace(regCwp, "$1$2")) || {}).groups)) {
+    throw new Error("Invalid rgb format: " + rgb);
+  }
+
+  // Extract RGB values
+  rgb = [rgba.r, rgba.g, rgba.b];
+  p = !!rgba.p; // If alpha value in %percent
+  a = +(rgba.A || rgba.a); // alpha value
+
+  // Convert RGB to HEX
+  for(i in rgb) {
+    hex += (+rgb[i]).toString(16).padStart(2, '0');
+  }
+
+  if (p) a /= 100;
+
+  // Convert Alpha to HEX
+  if (a) {
+    hex += Math.round(a * 255).toString(16).padStart(2, '0');
+  }
+
+  return hex;
+}
+
+// Example usage:
+rgb2hex("rgba(255, 22, 17, .3)"); // Outputs: #ff16114d
+rgb2hex("rgb(255, 18, 23, 0.5)");   // Outputs: #ff121789
+rgb2hex("rgb(39 39 201)");          // Outputs: #2727c9
+rgb2hex("rgb(255 33 56 / 38%)");    // Outputs: #ff213861
+```
+
+### hex2rgb
+
+[![Shorts Views](https://img.shields.io/youtube/views/PWoz2zaftJM?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/PWoz2zaftJM)
+[![Shorts Likes](https://img.shields.io/youtube/likes/PWoz2zaftJM?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/PWoz2zaftJM)
+[![Shorts Comments](https://img.shields.io/youtube/comments/PWoz2zaftJM?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/PWoz2zaftJM)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/PWoz2zaftJM)
+
+```js
+/**
+ * Convert HEX color format to RGB/RGBA color Format
+ * @param {string} hex [required]
+ * @returns rgb/rgba format (e.g., 'rgba(255,123,238)')
+ */
+function hex2rgb(hex) {
+  let i = 0, rgba = [];
+  
+  hex = hex.replace(/^#/, "");
+
+  // If the hex color is 3 characters (shorthand), expand it to 6 characters
+  if (hex.length === 3) {
+    hex = hex.replace(/(?=(.))/g, "$1");
+  }
+
+  // Extract the RGB values
+  for(; i < 6; i += 2) {
+    rgba.push(parseInt(hex.slice(i, i + 2), 16));
+  }
+
+  // Extract the Alpha value
+  if (hex.length === 8) {
+    rgba.push((parseInt(hex.slice(i, i + 2), 16) / 255).toFixed(2));
+  }
+
+  return 'rgba(' + rgba.join(',') + ')';
+}
+
+// Example usage:
+hex2rgb("#ffff0080"); // Outputs: rgba(255,255,0,0.50)
+hex2rgb("#eeeeee");   // Outputs: rgba(238,238,238)
+hex2rgb("#fff");      // Outputs: rgba(255,255,255)
+hex2rgb("#777bb3");   // Outputs: rgba(119,123,179)
+hex2rgb("#ff00ff80"); // Outputs: rgba(255,0,0.50)
 ```
 
 ### objChangeKeyCase
+
+[![Shorts Views](https://img.shields.io/youtube/views/vBlEkGJcdEg?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/vBlEkGJcdEg)
+[![Shorts Likes](https://img.shields.io/youtube/likes/vBlEkGJcdEg?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/vBlEkGJcdEg)
+[![Shorts Comments](https://img.shields.io/youtube/comments/vBlEkGJcdEg?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/vBlEkGJcdEg)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/vBlEkGJcdEg)
 
 ```js
 /**
@@ -142,11 +331,11 @@ objChangeKeyCase(obj);       // Outputs: {first: 1, second: 2, third: 3, fourth:
 
 ### Filter odd & even
 
-[![Shorts Views](https://img.shields.io/youtube/views/tDIaHnmRUVk?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/tDIaHnmRUVk)
-[![Shorts Likes](https://img.shields.io/youtube/likes/tDIaHnmRUVk?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/tDIaHnmRUVk)
-[![Shorts Comments](https://img.shields.io/youtube/comments/tDIaHnmRUVk?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/tDIaHnmRUVk)
+[![Shorts Views](https://img.shields.io/youtube/views/-0XRodnoeoc?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/-0XRodnoeoc)
+[![Shorts Likes](https://img.shields.io/youtube/likes/-0XRodnoeoc?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/-0XRodnoeoc)
+[![Shorts Comments](https://img.shields.io/youtube/comments/-0XRodnoeoc?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/-0XRodnoeoc)
 
-Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/tDIaHnmRUVk)
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/-0XRodnoeoc)
 
 ```js
 /**
@@ -168,17 +357,18 @@ function even(arr) {
 }
 
 // Example usage:
-odd([1,2,3,4,5,6,7,8,9]);  // Outputs: [1,3,5,7,9]
-even([1,2,3,4,5,6,7,8,9]); // Outputs: [2,4,6,8]
+let arr = [1,2,3,4,5,6,7,8,9];
+odd(arr);  // Outputs: [1,3,5,7,9]
+even(arr); // Outputs: [2,4,6,8]
 ```
 
 ### array_combine
 
-[![Shorts Views](https://img.shields.io/youtube/views/bAblJ4y5hJ0?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/bAblJ4y5hJ0)
-[![Shorts Likes](https://img.shields.io/youtube/likes/bAblJ4y5hJ0?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/bAblJ4y5hJ0)
-[![Shorts Comments](https://img.shields.io/youtube/comments/bAblJ4y5hJ0?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/bAblJ4y5hJ0)
+[![Shorts Views](https://img.shields.io/youtube/views/cl15TBx0kcE?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/cl15TBx0kcE)
+[![Shorts Likes](https://img.shields.io/youtube/likes/cl15TBx0kcE?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/cl15TBx0kcE)
+[![Shorts Comments](https://img.shields.io/youtube/comments/cl15TBx0kcE?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/cl15TBx0kcE)
 
-Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/bAblJ4y5hJ0)
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/cl15TBx0kcE)
 
 ```js
 /**
@@ -215,11 +405,11 @@ array_combine(keys, values); // Outputs: {IN: 'India', US: 'United States', RU: 
 
 ### object_flip
 
-[![Shorts Views](https://img.shields.io/youtube/views/x_2Xrx0mRAE?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/x_2Xrx0mRAE)
-[![Shorts Likes](https://img.shields.io/youtube/likes/x_2Xrx0mRAE?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/x_2Xrx0mRAE)
-[![Shorts Comments](https://img.shields.io/youtube/comments/x_2Xrx0mRAE?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/x_2Xrx0mRAE)
+[![Shorts Views](https://img.shields.io/youtube/views/pf4qjxGMamM?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/pf4qjxGMamM)
+[![Shorts Likes](https://img.shields.io/youtube/likes/pf4qjxGMamM?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/pf4qjxGMamM)
+[![Shorts Comments](https://img.shields.io/youtube/comments/pf4qjxGMamM?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/pf4qjxGMamM)
 
-Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/x_2Xrx0mRAE)
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/pf4qjxGMamM)
 
 ```js
 /**
@@ -254,11 +444,11 @@ object_flip(ext2); // Outputs: {India: 'IN', 'United States': 'US'}
 
 ### ucwords & lcwords
 
-[![Shorts Views](https://img.shields.io/youtube/views/Zxu9qnMsD1U?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/Zxu9qnMsD1U)
-[![Shorts Likes](https://img.shields.io/youtube/likes/Zxu9qnMsD1U?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/Zxu9qnMsD1U)
-[![Shorts Comments](https://img.shields.io/youtube/comments/Zxu9qnMsD1U?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/Zxu9qnMsD1U)
+[![Shorts Views](https://img.shields.io/youtube/views/9eelNb2oh8w?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/9eelNb2oh8w)
+[![Shorts Likes](https://img.shields.io/youtube/likes/9eelNb2oh8w?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/9eelNb2oh8w)
+[![Shorts Comments](https://img.shields.io/youtube/comments/9eelNb2oh8w?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/9eelNb2oh8w)
 
-Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/Zxu9qnMsD1U)
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/9eelNb2oh8w)
 
 ```js
 /**
@@ -316,11 +506,11 @@ str1.lcwords(' -_'); // Outputs: 'hELLO wORLD!, hELLO-wORLD!, hELLO_wORLD!'
 
 ### array_sum
 
-[![Shorts Views](https://img.shields.io/youtube/views/HSArJzJtVgc?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/HSArJzJtVgc)
-[![Shorts Likes](https://img.shields.io/youtube/likes/HSArJzJtVgc?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/HSArJzJtVgc)
-[![Shorts Comments](https://img.shields.io/youtube/comments/HSArJzJtVgc?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/HSArJzJtVgc)
+[![Shorts Views](https://img.shields.io/youtube/views/4Lw47y9cFF4?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/4Lw47y9cFF4)
+[![Shorts Likes](https://img.shields.io/youtube/likes/4Lw47y9cFF4?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/4Lw47y9cFF4)
+[![Shorts Comments](https://img.shields.io/youtube/comments/4Lw47y9cFF4?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/4Lw47y9cFF4)
 
-Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/HSArJzJtVgc)
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/4Lw47y9cFF4)
 
 ```js
 /**
@@ -350,11 +540,11 @@ array_sum(arr); // Outputs: 626.685
 
 ### array_product
 
-[![Shorts Views](https://img.shields.io/youtube/views/RjDFracRCmQ?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/RjDFracRCmQ)
-[![Shorts Likes](https://img.shields.io/youtube/likes/RjDFracRCmQ?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/RjDFracRCmQ)
-[![Shorts Comments](https://img.shields.io/youtube/comments/RjDFracRCmQ?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/RjDFracRCmQ)
+[![Shorts Views](https://img.shields.io/youtube/views/9tHOal2FX_k?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/9tHOal2FX_k)
+[![Shorts Likes](https://img.shields.io/youtube/likes/9tHOal2FX_k?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/9tHOal2FX_k)
+[![Shorts Comments](https://img.shields.io/youtube/comments/9tHOal2FX_k?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/9tHOal2FX_k)
 
-Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/RjDFracRCmQ)
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/9tHOal2FX_k)
 
 ```js
 /**
@@ -382,13 +572,13 @@ arr.product();      // Outputs: 161249.51
 array_product(arr); // Outputs: 161249.51
 ```
 
-### min
+### max & min
 
-[![Shorts Views](https://img.shields.io/youtube/views/7qU-UC0WGkk?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/7qU-UC0WGkk)
-[![Shorts Likes](https://img.shields.io/youtube/likes/7qU-UC0WGkk?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/7qU-UC0WGkk)
-[![Shorts Comments](https://img.shields.io/youtube/comments/7qU-UC0WGkk?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/7qU-UC0WGkk)
+[![Shorts Views](https://img.shields.io/youtube/views/X3QqTG3W6E0?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/X3QqTG3W6E0)
+[![Shorts Likes](https://img.shields.io/youtube/likes/X3QqTG3W6E0?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/X3QqTG3W6E0)
+[![Shorts Comments](https://img.shields.io/youtube/comments/X3QqTG3W6E0?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/X3QqTG3W6E0)
 
-Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/7qU-UC0WGkk)
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/X3QqTG3W6E0)
 
 ```js
 /**
@@ -400,20 +590,6 @@ function min(arr) {
   return Math.min.apply(null, arr);
 }
 
-// Example usage:
-const arr = [100,343,232,433,54544,33,3343,23];
-min(arr); // Outputs: 23
-```
-
-### max
-
-[![Shorts Views](https://img.shields.io/youtube/views/kfmyvgnnlZs?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/kfmyvgnnlZs)
-[![Shorts Likes](https://img.shields.io/youtube/likes/kfmyvgnnlZs?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/kfmyvgnnlZs)
-[![Shorts Comments](https://img.shields.io/youtube/comments/kfmyvgnnlZs?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/kfmyvgnnlZs)
-
-Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/kfmyvgnnlZs)
-
-```js
 /**
  * max — Array to look through or first value to compare Find heighest value
  * @param {array} arr
@@ -425,16 +601,48 @@ function max(arr) {
 
 // Example usage:
 const arr = [100,343,232,433,54544,33,3343,23];
+min(arr); // Outputs: 23
 max(arr); // Outputs: 54544
+```
+
+### randomEmoji
+
+[![Shorts Views](https://img.shields.io/youtube/views/1UZ9Io92YDA?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/1UZ9Io92YDA)
+[![Shorts Likes](https://img.shields.io/youtube/likes/1UZ9Io92YDA?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/1UZ9Io92YDA)
+[![Shorts Comments](https://img.shields.io/youtube/comments/1UZ9Io92YDA?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/1UZ9Io92YDA)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/1UZ9Io92YDA)
+
+```js
+/**
+ * @function randomEmoji To Generates a random emoji
+ * @returns Random Emoji (e.g., 😴, 😍, 😯)
+ */
+function randomEmoji() {
+  let startCodePoint = 0x1F601,
+    endCodePoint = 0x1F64F,
+    emoji = [];
+
+  for(; startCodePoint < endCodePoint; startCodePoint++) {
+    emoji.push(String.fromCodePoint(startCodePoint));
+  }
+
+  return emoji[
+    Math.floor(Math.random() * emoji.length)
+  ];
+}
+
+// Example usage:
+randomEmoji(); // Outputs: 😍
 ```
 
 ### randomEmail
 
-[![Shorts Views](https://img.shields.io/youtube/views/vHgV_T1q0hE?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/vHgV_T1q0hE)
-[![Shorts Likes](https://img.shields.io/youtube/likes/vHgV_T1q0hE?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/vHgV_T1q0hE)
-[![Shorts Comments](https://img.shields.io/youtube/comments/vHgV_T1q0hE?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/vHgV_T1q0hE)
+[![Shorts Views](https://img.shields.io/youtube/views/XYLPpxCsHO8?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/XYLPpxCsHO8)
+[![Shorts Likes](https://img.shields.io/youtube/likes/XYLPpxCsHO8?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/XYLPpxCsHO8)
+[![Shorts Comments](https://img.shields.io/youtube/comments/XYLPpxCsHO8?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/XYLPpxCsHO8)
 
-Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/vHgV_T1q0hE)
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/XYLPpxCsHO8)
 
 ```js
 /**
@@ -464,11 +672,11 @@ randomEmail('user.com'); // Outputs: 'psskyxrmtyve762@user.com'
 
 ### dateFormat
 
-[![Shorts Views](https://img.shields.io/youtube/views/kzw4tcyawsw?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/kzw4tcyawsw)
-[![Shorts Likes](https://img.shields.io/youtube/likes/kzw4tcyawsw?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/kzw4tcyawsw)
-[![Shorts Comments](https://img.shields.io/youtube/comments/kzw4tcyawsw?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/kzw4tcyawsw)
+[![Shorts Views](https://img.shields.io/youtube/views/hBXIMoK1Fmo?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/hBXIMoK1Fmo)
+[![Shorts Likes](https://img.shields.io/youtube/likes/hBXIMoK1Fmo?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/hBXIMoK1Fmo)
+[![Shorts Comments](https://img.shields.io/youtube/comments/hBXIMoK1Fmo?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/hBXIMoK1Fmo)
 
-Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/kzw4tcyawsw)
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/hBXIMoK1Fmo)
 
 ```js
 /**
@@ -524,11 +732,11 @@ dateFormat('d/m/Y h:i:s');   // Outputs: 09/12/2024 11:45:48
 
 ### generateIP
 
-[![Shorts Views](https://img.shields.io/youtube/views/rIjJNEvGFuY?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/rIjJNEvGFuY)
-[![Shorts Likes](https://img.shields.io/youtube/likes/rIjJNEvGFuY?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/rIjJNEvGFuY)
-[![Shorts Comments](https://img.shields.io/youtube/comments/rIjJNEvGFuY?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/rIjJNEvGFuY)
+[![Shorts Views](https://img.shields.io/youtube/views/aLW3bmSRAKs?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/aLW3bmSRAKs)
+[![Shorts Likes](https://img.shields.io/youtube/likes/aLW3bmSRAKs?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/aLW3bmSRAKs)
+[![Shorts Comments](https://img.shields.io/youtube/comments/aLW3bmSRAKs?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/aLW3bmSRAKs)
 
-Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/rIjJNEvGFuY)
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/aLW3bmSRAKs)
 
 ```js
 /**
@@ -551,11 +759,11 @@ generateIP(); // Outputs: '131.167.104.164'
 
 ### getFlag
 
-[![Shorts Views](https://img.shields.io/youtube/views/ITzY9kYAU14?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/ITzY9kYAU14)
-[![Shorts Likes](https://img.shields.io/youtube/likes/ITzY9kYAU14?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/ITzY9kYAU14)
-[![Shorts Comments](https://img.shields.io/youtube/comments/ITzY9kYAU14?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/ITzY9kYAU14)
+[![Shorts Views](https://img.shields.io/youtube/views/YGGHUDv3pvw?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/YGGHUDv3pvw)
+[![Shorts Likes](https://img.shields.io/youtube/likes/YGGHUDv3pvw?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/YGGHUDv3pvw)
+[![Shorts Comments](https://img.shields.io/youtube/comments/YGGHUDv3pvw?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/YGGHUDv3pvw)
 
-Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/ITzY9kYAU14)
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/YGGHUDv3pvw)
 
 ```js
 /**
@@ -578,11 +786,11 @@ getFlag('nK'); // Outputs: 🇳🇰
 
 ### str2bin & bin2str
 
-[![Shorts Views](https://img.shields.io/youtube/views/W8ywsnTuHhM?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/W8ywsnTuHhM)
-[![Shorts Likes](https://img.shields.io/youtube/likes/W8ywsnTuHhM?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/W8ywsnTuHhM)
-[![Shorts Comments](https://img.shields.io/youtube/comments/W8ywsnTuHhM?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/W8ywsnTuHhM)
+[![Shorts Views](https://img.shields.io/youtube/views/9yoKPiN0LTU?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/9yoKPiN0LTU)
+[![Shorts Likes](https://img.shields.io/youtube/likes/9yoKPiN0LTU?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/9yoKPiN0LTU)
+[![Shorts Comments](https://img.shields.io/youtube/comments/9yoKPiN0LTU?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/9yoKPiN0LTU)
 
-Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/W8ywsnTuHhM)
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/9yoKPiN0LTU)
 
 ```js
 /**
@@ -624,11 +832,11 @@ bin2str('01010111 01100101 01101100 01100011 01101111 01101101 01100101 00100000
 
 ### decbin & bindec
 
-[![Shorts Views](https://img.shields.io/youtube/views/2UM3izWLY1g?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/2UM3izWLY1g)
-[![Shorts Likes](https://img.shields.io/youtube/likes/2UM3izWLY1g?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/2UM3izWLY1g)
-[![Shorts Comments](https://img.shields.io/youtube/comments/2UM3izWLY1g?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/2UM3izWLY1g)
+[![Shorts Views](https://img.shields.io/youtube/views/20v-hCx7fok?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/20v-hCx7fok)
+[![Shorts Likes](https://img.shields.io/youtube/likes/20v-hCx7fok?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/20v-hCx7fok)
+[![Shorts Comments](https://img.shields.io/youtube/comments/20v-hCx7fok?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/20v-hCx7fok)
 
-Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/2UM3izWLY1g)
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/20v-hCx7fok)
 
 ```js
 /**
@@ -656,11 +864,11 @@ bindec('101000100011100101110101010111001111000'); // Outputs: 348374347384
 
 ### dechex & hexdec
 
-[![Shorts Views](https://img.shields.io/youtube/views/OhcF8UKjOqg?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/OhcF8UKjOqg)
-[![Shorts Likes](https://img.shields.io/youtube/likes/OhcF8UKjOqg?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/OhcF8UKjOqg)
-[![Shorts Comments](https://img.shields.io/youtube/comments/OhcF8UKjOqg?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/OhcF8UKjOqg)
+[![Shorts Views](https://img.shields.io/youtube/views/YBjTnFVOXEE?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/YBjTnFVOXEE)
+[![Shorts Likes](https://img.shields.io/youtube/likes/YBjTnFVOXEE?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/YBjTnFVOXEE)
+[![Shorts Comments](https://img.shields.io/youtube/comments/YBjTnFVOXEE?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/YBjTnFVOXEE)
 
-Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/OhcF8UKjOqg)
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/YBjTnFVOXEE)
 
 ```js
 /**
@@ -688,11 +896,11 @@ hexdec('ffffff'); // Outputs: 16777215
 
 ### formatMemunit
 
-[![Shorts Views](https://img.shields.io/youtube/views/vwZbs_sPTMI?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/vwZbs_sPTMI)
-[![Shorts Likes](https://img.shields.io/youtube/likes/vwZbs_sPTMI?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/vwZbs_sPTMI)
-[![Shorts Comments](https://img.shields.io/youtube/comments/vwZbs_sPTMI?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/vwZbs_sPTMI)
+[![Shorts Views](https://img.shields.io/youtube/views/TeawybFGvzk?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/TeawybFGvzk)
+[![Shorts Likes](https://img.shields.io/youtube/likes/TeawybFGvzk?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/TeawybFGvzk)
+[![Shorts Comments](https://img.shields.io/youtube/comments/TeawybFGvzk?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/TeawybFGvzk)
 
-Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/vwZbs_sPTMI)
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/TeawybFGvzk)
 
 ```js
 /**
@@ -709,16 +917,21 @@ function formatMemunit(bytes) {
 }
 
 // Example usage:
-formatMemunit()
+formatMemunit(583462344);        // Outputs: 556.43 MB
+formatMemunit(43223);            // Outputs: 42.21 KB
+formatMemunit(432);              // Outputs: 432 B
+formatMemunit(8274264242473);    // Outputs: 7.53 TB
+formatMemunit(13462490534);      // Outputs: 12.54 GB
+formatMemunit(3346249053473485); // Outputs: 2.97 PB
 ```
 
 ### dec2Oct & oct2Dec
 
-[![Shorts Views](https://img.shields.io/youtube/views/Zdi064NgvjM?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/Zdi064NgvjM)
-[![Shorts Likes](https://img.shields.io/youtube/likes/Zdi064NgvjM?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/Zdi064NgvjM)
-[![Shorts Comments](https://img.shields.io/youtube/comments/Zdi064NgvjM?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/Zdi064NgvjM)
+[![Shorts Views](https://img.shields.io/youtube/views/q5I141s3CiA?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/q5I141s3CiA)
+[![Shorts Likes](https://img.shields.io/youtube/likes/q5I141s3CiA?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/q5I141s3CiA)
+[![Shorts Comments](https://img.shields.io/youtube/comments/q5I141s3CiA?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/q5I141s3CiA)
 
-Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/Zdi064NgvjM)
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/q5I141s3CiA)
 
 ```js
 /**
@@ -746,11 +959,11 @@ oct2dec(453); // Outputs: 299
 
 ### generatedOTP
 
-[![Shorts Views](https://img.shields.io/youtube/views/_F8gi5beA5o?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/_F8gi5beA5o)
-[![Shorts Likes](https://img.shields.io/youtube/likes/_F8gi5beA5o?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/_F8gi5beA5o)
-[![Shorts Comments](https://img.shields.io/youtube/comments/_F8gi5beA5o?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/_F8gi5beA5o)
+[![Shorts Views](https://img.shields.io/youtube/views/SYq9KRBvBmw?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/SYq9KRBvBmw)
+[![Shorts Likes](https://img.shields.io/youtube/likes/SYq9KRBvBmw?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/SYq9KRBvBmw)
+[![Shorts Comments](https://img.shields.io/youtube/comments/SYq9KRBvBmw?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/SYq9KRBvBmw)
 
-Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/_F8gi5beA5o)
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/SYq9KRBvBmw)
 
 ```js
 /**

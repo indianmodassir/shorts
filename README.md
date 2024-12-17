@@ -110,6 +110,11 @@ ArrayDiff(arr1, [100,300,500]); // Outputs: [200, 400]
 ArrayDiff(arr2, ['.', '..']);   // Outputs: ['src/example.txt', '.env']
 ```
 
+### Dotenv
+
+```js
+```
+
 ### objChangeKeyCase
 
 ```js

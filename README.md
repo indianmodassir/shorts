@@ -17,11 +17,11 @@ Watch all Javascript shorts video on youtube see playlist [Javascript Shorts](ht
 
 ### getType
 
-[![Shorts Views](https://img.shields.io/youtube/views/?style=flat-square&logo=youtube)]()
-[![Shorts Likes](https://img.shields.io/youtube/likes/?style=flat-square&logo=youtube)]()
-[![Shorts Comments](https://img.shields.io/youtube/comments/?style=flat-square&logo=youtube)]()
+[![Shorts Views](https://img.shields.io/youtube/views/i2azCn225nE?style=flat-square&logo=youtube)](https://youtube.com/shorts/i2azCn225nE)
+[![Shorts Likes](https://img.shields.io/youtube/likes/i2azCn225nE?style=flat-square&logo=youtube)](https://youtube.com/shorts/i2azCn225nE)
+[![Shorts Comments](https://img.shields.io/youtube/comments/i2azCn225nE?style=flat-square&logo=youtube)](https://youtube.com/shorts/i2azCn225nE)
 
-Watch video shorts on youtube click: [Watch Now]()
+Watch video shorts on youtube click: [Watch Now](https://youtube.com/shorts/i2azCn225nE)
 
 ```js
 /**

@@ -15,6 +15,55 @@
 
 Watch all Javascript shorts video on youtube see playlist [Javascript Shorts](https://youtube.com/playlist?list=PLnnLdunPzY2s16kDzbhDfX9tAsGFRHpGJ)
 
+### jsonEncode and jsonDecode
+
+[![Shorts Views](https://img.shields.io/youtube/views/?style=flat-square&logo=youtube)]()
+[![Shorts Likes](https://img.shields.io/youtube/likes/?style=flat-square&logo=youtube)]()
+[![Shorts Comments](https://img.shields.io/youtube/comments/?style=flat-square&logo=youtube)]()
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/)
+
+```
+/**
+ * Converts a JavaScript value to a JavaScript Object Notation (JSON) string.
+ * @param {any} value           [required]
+ * @param {any} replacer        [optional]
+ * @param {string|number} space [optional]
+ * @returns {string} The JSON string representation of the object.
+ */
+function jsonEncode(value, replacer, space) {
+  try {
+    return JSON.stringify(value, replacer, space);
+  } catch(e) {
+    throw new Error('Error encoding object: ' + e);
+  }
+}
+
+/**
+ * Converts a JavaScript Object Notation (JSON) string into an object.
+ * @param {string} json [required]
+ * @param {any} reviver [optional]
+ * @returns {object} The decoded Javascript object
+ */
+function jsonDecode(json, reviver) {
+  try {
+    return JSON.parse(json, reviver);
+  } catch(e) {
+    throw new Error('Error decoding JSON: ' + e);
+  }
+}
+
+// Example usage with output:
+
+let obj = {name: 'Modassir', age: 23, Indian: true};
+
+// Encoding the object to a JSON string
+jsonEncode(obj);  // Outputs: '{"name":"Modassir","age":23,"Indian":true}'
+
+// Decoding the JSON string back to a JavaScript object
+jsonDecode(json); // Outputs: {name: 'Modassir', age: 23, Indian: true}
+```
+
 ### cmdout
 
 [![Shorts Views](https://img.shields.io/youtube/views/rdfFyUhKUys?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/rdfFyUhKUys)

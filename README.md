@@ -15,6 +15,69 @@
 
 Watch all Javascript shorts video on youtube see playlist [Javascript Shorts](https://youtube.com/playlist?list=PLnnLdunPzY2s16kDzbhDfX9tAsGFRHpGJ)
 
+### cmdout
+
+[![Shorts Views](https://img.shields.io/youtube/views/rdfFyUhKUys?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/rdfFyUhKUys)
+[![Shorts Likes](https://img.shields.io/youtube/likes/rdfFyUhKUys?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/rdfFyUhKUys)
+[![Shorts Comments](https://img.shields.io/youtube/comments/rdfFyUhKUys?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/rdfFyUhKUys)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/rdfFyUhKUys)
+
+```js
+/**
+ * cmdout To highlight text or background color in cmd/terminal
+ * @param {string} text Target text to highlight
+ * @param {boolean} setBg true for background otherwise text highlight
+ * @param {boolean} bold true for bold otherwise normal
+ * @param {array} color Don't use, Internal use only [private]
+ * @returns The highlightable text format
+ */
+function cmdout(text, setBg, bold, color) {
+  let ansi = `\x1b[${setBg ? 48 : 38};2;${color.join(';')}m`;
+
+  if (bold) ansi = `\x1b[1m${ansi}`;
+  if (setBg) text = `\x20${text}\x20`;
+
+  return `${ansi}${text}\x1b[0m`;
+}
+
+Object.assign(cmdout, {
+  blue: function(text, setBg, bold) {
+    return cmdout(text, setBg, bold, [8, 48, 218]);
+  },
+  green: function(text, setBg, bold) {
+    return cmdout(text, setBg, bold, [19, 161, 14]);
+  },
+  aqua: function(text, setBg, bold) {
+    return cmdout(text, setBg, bold, [58, 150, 221]);
+  },
+  red: function(text, setBg, bold) {
+    return cmdout(text, setBg, bold, [197, 15, 31]);
+  },
+  purple: function(text, setBg, bold) {
+    return cmdout(text, setBg, bold, [136, 23, 152]);
+  },
+  yellow: function(text, setBg, bold) {
+    return cmdout(text, setBg, bold, [193, 156, 0]);
+  },
+  white: function(text, setBg, bold) {
+    return cmdout(text, setBg, bold, [204, 204, 204]);
+  },
+  gray: function(text, setBg, bold) {
+    return cmdout(text, setBg, bold, [118, 118, 118]);
+  }
+});
+
+// Example usage:
+cmdout.yellow('Like', true, true) + cmdout.blue('Subscribe', true, true); // Outputs:
+cmdout.red('Hello World!', false, true);                                  // Outputs:
+cmdout.red('Hello World!', true, true);                                   // Outputs:
+cmdout.yellow('Hello World!', false, true);                               // Outputs:
+cmdout.yellow('Hello World!', true, true);                                // Outputs:
+cmdout.blue('Hello World!', false, true);                                 // Outputs:
+cmdout.red('Thanks', true, true) + cmdout.yellow('Watching', true, true); // Outputs:
+```
+
 ### getType
 
 [![Shorts Views](https://img.shields.io/youtube/views/i2azCn225nE?style=flat-square&logo=youtube)](https://youtube.com/shorts/i2azCn225nE)

@@ -58,7 +58,7 @@ function jsonDecode(json, reviver) {
 let obj = {name: 'Modassir', age: 23, Indian: true};
 
 // Encoding the object to a JSON string
-jsonEncode(obj);  // Outputs: '{"name":"Modassir","age":23,"Indian":true}'
+let json = jsonEncode(obj);  // Outputs: '{"name":"Modassir","age":23,"Indian":true}'
 
 // Decoding the JSON string back to a JavaScript object
 jsonDecode(json); // Outputs: {name: 'Modassir', age: 23, Indian: true}

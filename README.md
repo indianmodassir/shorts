@@ -17,11 +17,11 @@ Watch all Javascript shorts video on youtube see playlist [Javascript Shorts](ht
 
 ### jsonEncode and jsonDecode
 
-[![Shorts Views](https://img.shields.io/youtube/views/?style=flat-square&logo=youtube)]()
-[![Shorts Likes](https://img.shields.io/youtube/likes/?style=flat-square&logo=youtube)]()
-[![Shorts Comments](https://img.shields.io/youtube/comments/?style=flat-square&logo=youtube)]()
+[![Shorts Views](https://img.shields.io/youtube/views/5uURC9ItBEQ?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/5uURC9ItBEQ)
+[![Shorts Likes](https://img.shields.io/youtube/likes/5uURC9ItBEQ?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/5uURC9ItBEQ)
+[![Shorts Comments](https://img.shields.io/youtube/comments/5uURC9ItBEQ?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/5uURC9ItBEQ)
 
-Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/)
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/5uURC9ItBEQ)
 
 ```
 /**
@@ -62,6 +62,47 @@ let json = jsonEncode(obj);  // Outputs: '{"name":"Modassir","age":23,"Indian":t
 
 // Decoding the JSON string back to a JavaScript object
 jsonDecode(json); // Outputs: {name: 'Modassir', age: 23, Indian: true}
+```
+
+### wordCount
+
+[![Shorts Views](https://img.shields.io/youtube/views/LkZgDWlKauU?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/LkZgDWlKauU)
+[![Shorts Likes](https://img.shields.io/youtube/likes/LkZgDWlKauU?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/LkZgDWlKauU)
+[![Shorts Comments](https://img.shields.io/youtube/comments/LkZgDWlKauU?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/LkZgDWlKauU)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/LkZgDWlKauU)
+
+```js
+/**
+ * Return information about words used in a string
+ * @param {string} str The string
+ * @param {number} format Specify the return value of this function. The current supported values
+ * @param {string} chars A list of additional characters which will be considered as 'word'
+ * @returns Information about words
+ */
+function wordCount(str, format = 0, chars) {
+  let regstr = new RegExp("([a-z-0-9" + (chars || "") + "]+)", "gi"),
+    ret = [0, [], {}][format],
+    result;
+
+  while((result = regstr.exec(str))) {
+    if (format === 0) ret++;
+    else if (format === 1) ret.push(result[0]);
+    else ret[result.index] = result[0];
+  }
+
+  return ret;
+}
+
+// Example usage:
+let str = 'one:two three-four five_six seven$eight nine%ten';
+
+wordCount(str);           // Outputs: 9
+wordCount(str, 0, '$:%'); // Outputs: 6
+wordCount(str, 1);        // Outputs: ['one', 'two', 'three-four', 'five', 'six', 'seven','eight', 'nine', 'ten']
+wordCount(str, 1, '$:%'); // Outputs: [ 'one:two', 'three-four', 'five', 'six', 'seven$eight', 'nine%ten' ]
+wordCount(str, 2);        // Outputs: {'0': 'one','4': 'two','8': 'three-four','19': 'five','24': 'six','28': 'seven','34': 'eight','40': 'nine','45': 'ten'}
+wordCount(str, 2, '$:%'); // Outputs: {'0': 'one:two','8': 'three-four','19': 'five','24': 'six','28': 'seven$eight','40': 'nine%ten'}
 ```
 
 ### speech2text

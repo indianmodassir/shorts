@@ -15,6 +15,34 @@
 
 Watch all Javascript shorts video on youtube see playlist [Javascript Shorts](https://youtube.com/playlist?list=PLnnLdunPzY2s16kDzbhDfX9tAsGFRHpGJ)
 
+### strShuffle
+
+```js
+/**
+ * shuffles a string. One permutation of all possible is created.
+ * @param {string} str The input string.
+ * @returns {string} Randomly shuffles a string
+ */
+function strShuffle(str) {
+  let arr = str.split(''),
+    i = arr.length - 1,
+    rIndex;
+
+  // Shuffle Algorithm
+  for(; i > 0; i--) {
+    rIndex = Math.floor(Math.random() * (i + 1));
+
+    // Swap the current element with the random element
+    [arr[i], arr[rIndex]] = [arr[rIndex], arr[i]];
+  }
+
+  return arr.join('');
+}
+
+// Example usage:
+strShuffle('Hello'); // Outputs: olelH
+```
+
 ### jsonEncode and jsonDecode
 
 [![Shorts Views](https://img.shields.io/youtube/views/5uURC9ItBEQ?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/5uURC9ItBEQ)

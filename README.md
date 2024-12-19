@@ -13,7 +13,7 @@
 
 ## Javascript YT Shorts Source Code
 
-Watch all Javascript shorts video on youtube see playlist [Javascript Shorts](https://youtube.com/playlist?list=PLnnLdunPzY2s16kDzbhDfX9tAsGFRHpGJ)
+Watch all JavaScript shorts video on youtube see playlist [JavaScript Shorts](https://www.youtube.com/playlist?list=PLnnLdunPzY2srl1Iy4xHkKWaGQ-CUepNk)
 
 ### strShuffle
 

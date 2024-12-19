@@ -64,6 +64,38 @@ jsonEncode(obj);  // Outputs: '{"name":"Modassir","age":23,"Indian":true}'
 jsonDecode(json); // Outputs: {name: 'Modassir', age: 23, Indian: true}
 ```
 
+### speech2text
+
+[![Shorts Views](https://img.shields.io/youtube/views/zW_zEscP1bU?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/zW_zEscP1bU)
+[![Shorts Likes](https://img.shields.io/youtube/likes/zW_zEscP1bU?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/zW_zEscP1bU)
+[![Shorts Comments](https://img.shields.io/youtube/comments/zW_zEscP1bU?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/zW_zEscP1bU)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/zW_zEscP1bU)
+
+```js
+/**
+* Text to Speech using SpeechSynthesisUtterance and SpeechSynthesis API
+* @param {string} text target text for speech
+*/
+function text2speech(text) {
+ let speech = new window.SpeechSynthesisUtterance(text),
+   synthesis = window.speechSynthesis;
+
+ // Optional: Set language of speech
+ speech.lang = 'en-US';
+
+ // Optional: Set pitch and rate of speech
+ speech.pitch = 1;
+ speech.rate = 1;
+ 
+ // Start speech
+ synthesis.speak(speech);
+}
+
+// Example usage:
+speech2text('Hello viewers, how are you?');
+```
+
 ### cmdout
 
 [![Shorts Views](https://img.shields.io/youtube/views/rdfFyUhKUys?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/rdfFyUhKUys)

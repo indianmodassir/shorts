@@ -15,7 +15,90 @@
 
 Watch all JavaScript shorts video on youtube see playlist [JavaScript Shorts](https://www.youtube.com/playlist?list=PLnnLdunPzY2srl1Iy4xHkKWaGQ-CUepNk)
 
+### generatePassword
+
+[![Shorts Views](https://img.shields.io/youtube/views/b9rw-DEwgj4?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/b9rw-DEwgj4)
+[![Shorts Likes](https://img.shields.io/youtube/likes/b9rw-DEwgj4?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/b9rw-DEwgj4)
+[![Shorts Comments](https://img.shields.io/youtube/comments/b9rw-DEwgj4?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/b9rw-DEwgj4)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/b9rw-DEwgj4)
+
+```js
+/**
+ * Generates a Random strong password (e.g., CRsAB0f%XUGY)
+ * @param {number} Password length
+ * @returns The Random Password
+ */
+function generatePassword(len) {
+  let chars = 'abcdefghijklmnopqrstuvwxyz',
+    num = 1234567890,
+    password = '',
+    i = 0;
+
+    // Concating num, Upper alpha and special chars
+    chars += num + chars.toUpperCase() + '!@#$%^&*()';
+    len = +len || 8;
+
+  // Generating random password
+  for(; i < len; i++) {
+    password += chars[Math.floor(Math.random() * chars.length)];
+  }
+
+  return password;
+}
+
+// Example usage:
+generatePassword();   // Outputs: CRsAB0f%XUGY
+generatePassword(12); // Outputs: ayrYcu%Pu$Ka
+```
+
+### findLongest and findShortest
+
+[![Shorts Views](https://img.shields.io/youtube/views/MDumTQ543O4?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/MDumTQ543O4)
+[![Shorts Likes](https://img.shields.io/youtube/likes/MDumTQ543O4?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/MDumTQ543O4)
+[![Shorts Comments](https://img.shields.io/youtube/comments/MDumTQ543O4?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/MDumTQ543O4)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/MDumTQ543O4)
+
+```js
+/**
+ * Find the longest string value in an Array
+ * @param {}
+ * @returns The longest string
+ */
+function findLongest(arr) {
+  return arr.reduce((max, val) => (
+    max.length < val.length && (max = val),
+    max
+  ), arr[0] + '');
+}
+
+/**
+ * Find the shortest string value in an Array
+ * @param {}
+ * @returns The shortest string
+ */
+function findShortest(arr) {
+  return arr.reduce((min, val) => (
+    min.length > val.length && (min = val),
+    min
+  ), arr[0] + '');
+}
+
+// Example usage:
+let arr = ['Hello', 'How are you?', 'Welcome to you', 'Thanks'];
+
+findLongest(arr);  // Outputs: Welcome to you
+findShortest(arr); // Outputs: Hello
+```
+
 ### strShuffle
+
+[![Shorts Views](https://img.shields.io/youtube/views/kOB_yygDwIY?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/kOB_yygDwIY)
+[![Shorts Likes](https://img.shields.io/youtube/likes/kOB_yygDwIY?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/kOB_yygDwIY)
+[![Shorts Comments](https://img.shields.io/youtube/comments/kOB_yygDwIY?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/kOB_yygDwIY)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/kOB_yygDwIY)
 
 ```js
 /**

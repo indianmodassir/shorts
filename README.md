@@ -15,6 +15,49 @@
 
 Watch all JavaScript shorts video on youtube see playlist [JavaScript Shorts](https://www.youtube.com/playlist?list=PLnnLdunPzY2srl1Iy4xHkKWaGQ-CUepNk)
 
+### hasPassword and verifyPassword
+
+[![Shorts Views](https://img.shields.io/youtube/views/9_soeaSaccs?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/9_soeaSaccs)
+[![Shorts Likes](https://img.shields.io/youtube/likes/9_soeaSaccs?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/9_soeaSaccs)
+[![Shorts Comments](https://img.shields.io/youtube/comments/9_soeaSaccs?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/9_soeaSaccs)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/9_soeaSaccs)
+
+```js
+const crypto = require('crypto');
+
+/**
+ * Create a password hash with salt hashing SHA-256 algorithm
+ * @param {string} password 
+ * @param {string} salt [optional]
+ * @returns {string} Hashed Password
+ */
+function hashPassword(password, salt) {
+  // Generate Salt
+  salt = salt || crypto.randomBytes(16).toString('hex');
+  let hash = salt + crypto.createHmac('sha256', salt).update(password).digest('hex');
+  return hash;
+}
+
+/**
+ * Checks if the given hash matches the given options
+ * @param {string} password 
+ * @param {string} hash 
+ * @returns {boolean} Verified for true Otherwise false
+ */
+function verifyPassword(password, hash) {
+  // Extract salt from given hash
+  let salt = hash.slice(0, 32);
+  return hashPassword(password, salt) === hash;
+}
+
+// Example usage:
+let hash = hashPassword('123@pass'); // Outputs: Random => 8d0f5aa4fdfec0895a9e796420ffb9eeb223c9f04777e96d8038591378a535f662edfd6f9e3a49c64ca423bc38106125
+verifyPassword('123@pass', hash);    // Outputs: true
+verifyPassword('123@Pass', hash);    // Outputs: false
+verifyPassword('pass@123', hash);    // Outputs: false
+```
+
 ### generatePassword
 
 [![Shorts Views](https://img.shields.io/youtube/views/b9rw-DEwgj4?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/b9rw-DEwgj4)

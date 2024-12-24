@@ -58,6 +58,37 @@ verifyPassword('123@Pass', hash);    // Outputs: false
 verifyPassword('pass@123', hash);    // Outputs: false
 ```
 
+### toggleCase
+
+[![Shorts Views](https://img.shields.io/youtube/views/5kPF4bQecWU?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/5kPF4bQecWU)
+[![Shorts Likes](https://img.shields.io/youtube/likes/5kPF4bQecWU?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/5kPF4bQecWU)
+[![Shorts Comments](https://img.shields.io/youtube/comments/5kPF4bQecWU?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/5kPF4bQecWU)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/5kPF4bQecWU)
+
+```js
+/**
+ * Converts a string with a specified separator into tOGGLE cASE format.
+ * @param {string} str
+ * @param {string} sep
+ * @returns {string} tOGGLE cASE format
+ */
+function toggleCase(str, sep = " ") {
+  let regex = new RegExp("([^" + sep + "]+)", "g");
+
+  // Converting str to tOGGLE cASE
+  return str.replace(regex, (_, w) => w[0].toLowerCase() + w.slice(1).toUpperCase());
+}
+
+// Example usage:
+let str = 'Hello World hello:world hello_world';
+
+toggleCase(str);        // Outputs: hELLO wORLD hELLO:WORLD hELLO_WORLD
+toggleCase(str, ': _'); // Outputs: hELLO wORLD hELLO:wORLD hELLO_wORLD
+toggleCase(str, ': _'); // Outputs: tOGGLE cASE
+toggleCase(str, ':_');  // Outputs: hELLO WORLD HELLO:wORLD HELLO_wORLD
+```
+
 ### generatePassword
 
 [![Shorts Views](https://img.shields.io/youtube/views/b9rw-DEwgj4?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/b9rw-DEwgj4)

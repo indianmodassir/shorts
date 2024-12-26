@@ -15,6 +15,130 @@
 
 Watch all JavaScript shorts video on youtube see playlist [JavaScript Shorts](https://www.youtube.com/playlist?list=PLnnLdunPzY2srl1Iy4xHkKWaGQ-CUepNk)
 
+### upm (User Password Manager) Library
+
+[![Shorts Views](https://img.shields.io/youtube/views/D06gC1fyjgY?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/D06gC1fyjgY)
+[![Shorts Likes](https://img.shields.io/youtube/likes/D06gC1fyjgY?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/D06gC1fyjgY)
+[![Shorts Comments](https://img.shields.io/youtube/comments/D06gC1fyjgY?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/D06gC1fyjgY)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/D06gC1fyjgY)
+
+```js
+const upm = {}; // user password manager
+const path = 'storage.json';
+const fs = require('fs');
+
+/**
+ * Gets password, If user exists in storage
+ * @param {string} username 
+ * @returns 
+ */
+upm.get = function(username) {
+  return (this.getAll()[username] || {}).password;
+}
+
+/**
+ * Returns all saved storage data
+ * @returns All storage data
+ */
+upm.getAll = function() {
+  return JSON.parse(fs.readFileSync(path, {encoding: 'utf8'}));
+}
+
+/**
+ * Save new password, If user does not exists
+ * @param {string} username 
+ * @param {string} password 
+ * @returns true or undefined
+ */
+upm.save = function(username, password) {
+  let date = (new Date).toLocaleString(),
+    storage = this.getAll();
+
+  if (!this.get(username)) {
+    if (password) storage[username] = {password, date};
+    fs.writeFileSync(path, JSON.stringify(storage, null, 2));
+    return true;
+  }
+}
+
+// Example usage:
+
+// Save Password in Storage
+upm.save('GmailPass', '123@gmail');
+upm.save('FBPass', '123@facebook');
+upm.save('InstaPass', '123@insta');
+
+// View all saved data
+upm.getAll();
+
+// Get Passwword of Specific User
+upm.get('GmailPass');
+upm.get('InstaPass');
+```
+
+### encrypt and decrypt
+
+[![Shorts Views](https://img.shields.io/youtube/views/8j_JdzFA5A4?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/8j_JdzFA5A4)
+[![Shorts Likes](https://img.shields.io/youtube/likes/8j_JdzFA5A4?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/8j_JdzFA5A4)
+[![Shorts Comments](https://img.shields.io/youtube/comments/8j_JdzFA5A4?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/8j_JdzFA5A4)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/8j_JdzFA5A4)
+
+```js
+const crypto = require('crypto');
+
+/**
+ * Encrypts the given data using AES-256-GCM encryption algorithm
+ * @param {string} data
+ * @param {key} key
+ * @returns {string} Encrypted plainText
+ */
+function encrypt(data, key) {
+  let encrypted, cipher, tag,
+    iv = crypto.randomBytes(16);
+
+  key = crypto.createHash('sha256').update(key).digest();
+  cipher = crypto.createCipheriv('AES-256-GCM', key, iv);
+
+  encrypted = cipher.update(data, 'utf-8', 'base64');
+  encrypted += cipher.final('base64');
+
+  return btoa(JSON.stringify({
+    data: encrypted,
+    iv: iv.toString('base64'),
+    tag: cipher.getAuthTag().toString('base64')
+  }));
+}
+
+/**
+ * Decrypts the encrypted data using AES-256-GCM algorithm
+ * @param {string} encdata
+ * @param {string} key
+ * @returns {string} Decrypted plainText
+ */
+function decrypt(encdata, key) {
+  let decrypted, decipher,
+    {data, iv, tag} = JSON.parse(atob(encdata));
+
+  key = crypto.createHash('sha256').update(key).digest();
+
+  decipher = crypto.createDecipheriv('AES-256-GCM', key, Buffer.from(iv, 'base64'));
+  decipher.setAuthTag(Buffer.from(tag, 'base64'));
+
+  decrypted = decipher.update(data, 'base64', 'utf-8');
+  decrypted += decipher.final('utf-8');
+
+  return decrypted;
+}
+
+// Example usage:
+let key = 'example-key'; // private key
+
+let encMsg = encrypt('Your secret message?', key); // Outputs: eyJkYXRhIjoidzkzVGVPRDJwYzREUWVYUjRXeVJQU1FxWGZrPSIsIml2IjoiWlNpSVNmanNPcFBic0dvTGJUOUJDZz09IiwidGFnIjoiSkVFUDBBeGdkRUlnRVNyekNTZUJidz09In0=
+decrypt(encMsg);                                   // Outputs: Your secret message?
+```
+
 ### hasPassword and verifyPassword
 
 [![Shorts Views](https://img.shields.io/youtube/views/9_soeaSaccs?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/9_soeaSaccs)

@@ -15,6 +15,43 @@
 
 Watch all JavaScript shorts video on youtube see playlist [JavaScript Shorts](https://www.youtube.com/playlist?list=PLnnLdunPzY2srl1Iy4xHkKWaGQ-CUepNk)
 
+### ArrayUnique
+
+[![Shorts Views](https://img.shields.io/youtube/views/JQG5HDsVM_g?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/JQG5HDsVM_g)
+[![Shorts Likes](https://img.shields.io/youtube/likes/JQG5HDsVM_g?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/JQG5HDsVM_g)
+[![Shorts Comments](https://img.shields.io/youtube/comments/JQG5HDsVM_g?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/JQG5HDsVM_g)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/JQG5HDsVM_g)
+
+```js
+/**
+ * Function to remove duplicate elements from an array.
+ * @param {array} arr 
+ * @param {boolean} isRef 
+ * @returns Unique Array
+ */
+function ArrayUnique(arr, isRef) {
+  // Create a new array of unique elements
+  let unique = [...new Set(arr)];
+
+  // If isRef, Modify the original array by reference
+  if (isRef) {
+    // First we will empty the original array
+    arr.length = 0;
+
+    // Now we will push the unique array into the original array
+    [].push.apply(arr, unique);
+  }
+
+  return unique;
+}
+
+// Example usage with outputs
+let arr = [1,2,3,4,1,2,3,4,1,2,3,4];
+ArrayUnique(arr);       // Outputs: [1,2,3] Return a new array without modified in original array
+ArrayUnique(arr, true); // Outputs: [1,2,3] Return a new array with modified original array by reference
+```
+
 ### upm (User Password Manager) Library
 
 [![Shorts Views](https://img.shields.io/youtube/views/D06gC1fyjgY?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/D06gC1fyjgY)

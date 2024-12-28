@@ -15,6 +15,84 @@
 
 Watch all JavaScript shorts video on youtube see playlist [JavaScript Shorts](https://www.youtube.com/playlist?list=PLnnLdunPzY2srl1Iy4xHkKWaGQ-CUepNk)
 
+### Serialize
+
+[![Shorts Views](https://img.shields.io/youtube/views/HOVlf_olxTc?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/HOVlf_olxTc)
+[![Shorts Likes](https://img.shields.io/youtube/likes/HOVlf_olxTc?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/HOVlf_olxTc)
+[![Shorts Comments](https://img.shields.io/youtube/comments/HOVlf_olxTc?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/HOVlf_olxTc)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/HOVlf_olxTc)
+
+```js
+/**
+ * Serialize an array of form elements or a set of
+ * key/values into a query string
+ */
+function serialize(data, trad) {
+  let prefix, s = [],
+    add = function(key, val) {
+      s[s.length] = encodeURIComponent(key) + '=' +
+        encodeURIComponent(val == null ? '' : val);
+    };
+
+  if (data == null) return '';
+
+  // [['key','value']] or [{name: '', value: ''}]
+  if (Array.isArray(data)) {
+    for(prefix of data) {
+      add(
+        prefix[0] || prefix.name,
+        prefix[1] || prefix.value
+      );
+    }
+  } else {
+    // Encode params recursively.
+    // {name: {...}, key: [...]} or {key: value}
+    for(prefix in data) {
+      makeParams(prefix, data[prefix], trad, add);
+    }
+  }
+
+  return s.join('&');
+}
+
+function makeParams(prefix, mixed, trad, add) {
+  let name, rbracket = /\[\]$/;
+
+  if (Array.isArray(mixed)) {
+    // Serialize array item.
+    mixed.forEach(function(v, i) {
+      trad || rbracket.test(prefix) ? add(prefix, v) :
+        makeParams(
+          prefix + '[' + (typeof v == 'object' && v != null ? i : '') + ']',
+          v,
+          trad,
+          add
+        );
+    });
+  } else if (!trad && typeof mixed === 'object') {
+    // Serialize object item.
+    for(name in mixed) {
+      makeParams(prefix + '[' + name + ']', mixed[name], trad, add);
+    }
+  } else {
+    // Serialize scalar item.
+    add(prefix, mixed);
+  }
+}
+
+// Example usage:
+let data = {id: 3, email: 'example@gmai.com', pass: 12354};
+let arr = [['name', 'modassir'], {name: 'age', value: 22}];
+let obj = {id: 1, param: {one:1, two: 2}, index: [1,2,3,4,5]};
+
+// Outputs:
+serialize(data);      // Outputs: id=3&email=example%40gmai.com&pass=12354
+serialize(arr);       // Outputs: name=modassir&age=22
+serialize(obj);       // Outputs: id=1&param%5Bone%5D=1&param%5Btwo%5D=2&index%5B%5D=1&index%5B%5D=2&index%5B%5D=3&index%5B%5D=4&index%5B%5D=5
+serialize(obj, true); // Outputs: id=1&param=%5Bobject%20Object%5D&index=1&index=2&index=3&index=4&index=5
+```
+
 ### ArrayUnique
 
 [![Shorts Views](https://img.shields.io/youtube/views/JQG5HDsVM_g?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/JQG5HDsVM_g)

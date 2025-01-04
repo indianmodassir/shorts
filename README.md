@@ -11,6 +11,93 @@
 
 - [Javascript](#javascript-yt-shorts-source-code)
 
+## Web Shorts HTML, CSS or JavaScript
+
+Watch all Web shorts video on youtube see playlist [JavaScript Shorts](https://www.youtube.com/playlist?list=PLnnLdunPzY2t2iQ7X8BAUh4s8Yx-2KR7z)
+
+### Draggable List
+
+[![Shorts Views](https://img.shields.io/youtube/views/ZxOHPXOZ4q8?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/ZxOHPXOZ4q8)
+[![Shorts Likes](https://img.shields.io/youtube/likes/ZxOHPXOZ4q8?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/ZxOHPXOZ4q8)
+[![Shorts Comments](https://img.shields.io/youtube/comments/ZxOHPXOZ4q8?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/ZxOHPXOZ4q8)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/ZxOHPXOZ4q8)
+
+[Download](https://)
+
+### Bounce Loader
+
+[![Shorts Views](https://img.shields.io/youtube/views/0nlHZn1Q4Gk?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/0nlHZn1Q4Gk)
+[![Shorts Likes](https://img.shields.io/youtube/likes/0nlHZn1Q4Gk?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/0nlHZn1Q4Gk)
+[![Shorts Comments](https://img.shields.io/youtube/comments/0nlHZn1Q4Gk?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/0nlHZn1Q4Gk)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/0nlHZn1Q4Gk)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bounce-loader {
+      display: flex;
+      width: 24px;
+      height: 40px;
+      justify-content: space-between;
+    }
+
+    .bounce-loader span {
+      border-radius: 10px;
+      width: 6px;
+      height: 100%;
+      background-color: #a6a6a6;
+      animation: loading 0.6s var(--i) ease-in-out infinite;
+    }
+
+    @keyframes loading {
+      0%, 100% {
+        transform: scaleY(0.2);
+        opacity: 0.8;
+      }
+
+      50% {
+        transform: scaleY(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bounce-loader">
+    <span style="--i: 0s"></span>
+    <span style="--i: 0.15s"></span>
+    <span style="--i: 0.3s"></span>
+  </div>
+  
+</body>
+</html>
+```
+
 ## Javascript YT Shorts Source Code
 
 Watch all JavaScript shorts video on youtube see playlist [JavaScript Shorts](https://www.youtube.com/playlist?list=PLnnLdunPzY2srl1Iy4xHkKWaGQ-CUepNk)

@@ -7,10 +7,6 @@
 [![Github Followers](https://img.shields.io/github/followers/indianmodassir?style=flat-square&logo=github)](https://github.com/indianmodassir?tab=followers)
 [![X](https://img.shields.io/twitter/follow/Xsmodassir?style=flat-square&logo=x&color=%2300000000)](https://x.com/Xsmodassir)
 
-## Used Coding Languages in YT Shorts
-
-- [Javascript](#javascript-yt-shorts-source-code)
-
 ## Web Shorts HTML, CSS or JavaScript
 
 Watch all Web shorts video on youtube see playlist [JavaScript Shorts](https://www.youtube.com/playlist?list=PLnnLdunPzY2t2iQ7X8BAUh4s8Yx-2KR7z)
@@ -23,7 +19,7 @@ Watch all Web shorts video on youtube see playlist [JavaScript Shorts](https://w
 
 Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/ZxOHPXOZ4q8)
 
-[Download](https://)
+Download Zip [ZxOHPXOZ4q8.zip](https://github.com/indianmodassir/shorts/blob/main/source/ZxOHPXOZ4q8.zip)
 
 ### Bounce Loader
 

@@ -15,6 +15,167 @@
 
 Watch all JavaScript shorts video on youtube see playlist [JavaScript Shorts](https://www.youtube.com/playlist?list=PLnnLdunPzY2srl1Iy4xHkKWaGQ-CUepNk)
 
+### memoize
+
+[![Shorts Views](https://img.shields.io/youtube/views/N_qQc43ZKds?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/N_qQc43ZKds)
+[![Shorts Likes](https://img.shields.io/youtube/likes/N_qQc43ZKds?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/N_qQc43ZKds)
+[![Shorts Comments](https://img.shields.io/youtube/comments/N_qQc43ZKds?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/N_qQc43ZKds)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/N_qQc43ZKds)
+
+```js
+/**
+ * Speed up your code with memoization!
+ * 🚀 Caching results for faster performance!
+ * @param {function} fn
+ * @param {function} func
+ * @returns A callback Function
+ */
+function memoize(fn, func) {
+  let result, key, cache = new Map();
+
+  return function() {
+    key = JSON.stringify(arguments);
+
+    // If key in cache, then return the cached result
+    return cache.has(key) ? (
+      result = cache.get(key),
+      func(result),
+      result
+
+    // Otherwise
+    ) : (
+      result = fn(...arguments),
+      cache.set(key, result),
+      result
+    );
+  };
+}
+
+// Example usage:
+
+// For example, This is your big Handler
+let bigHandler = (end) => {
+  for(let i = 0; i < end; i++) {}
+  console.log("\nFrom Handler: " + end);
+  return end;
+};
+
+let memoizedAdd = memoize(bigHandler,
+  // Optional argument
+  // This func will be invoked when data is loaded from the cache
+  function(res) {
+    console.log("\nFrom Cache: " + res);
+  });
+
+// Testing with Outputs:
+console.time();
+memoizedAdd(100000000);
+console.timeEnd();
+
+console.time();
+memoizedAdd(100000000);
+console.timeEnd();
+
+console.time();
+memoizedAdd(500000000);
+console.timeEnd();
+
+console.time();
+memoizedAdd(500000000);
+console.timeEnd();
+```
+
+### cloneDeep
+
+[![Shorts Views](https://img.shields.io/youtube/views/iybtOI8yJgk?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/iybtOI8yJgk)
+[![Shorts Likes](https://img.shields.io/youtube/likes/iybtOI8yJgk?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/iybtOI8yJgk)
+[![Shorts Comments](https://img.shields.io/youtube/comments/iybtOI8yJgk?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/iybtOI8yJgk)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/iybtOI8yJgk)
+
+```js
+/**
+ * Function to perform deep cloning of an object or array
+ * @param {object|array} obj
+ * @returns The cloned array or object
+ */
+function cloneDeep(obj) {
+  if (obj === null || typeof obj !== 'object') {
+    return obj;
+  }
+
+  let clone = Array.isArray(obj) ? [] : {},
+    key;
+
+  for(key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      clone[key] = cloneDeep(obj[key]);
+    }
+  }
+
+  return clone;
+}
+
+// Example usage:
+const orig = {
+  name: 'modassir',
+  details: {age: 22, addr: 'RFJ'},
+  hobbies: ['coding', 'reading']
+};
+
+const copied = cloneDeep(orig);
+copied.details.age = 23;
+copied.hobbies[1] = 'travelling';
+
+// Outputs:
+console.log('Original:', orig);
+console.log('Copied:', copied);
+```
+
+### debounce
+
+[![Shorts Views](https://img.shields.io/youtube/views/VItEOPa7b58?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/VItEOPa7b58)
+[![Shorts Likes](https://img.shields.io/youtube/likes/VItEOPa7b58?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/VItEOPa7b58)
+[![Shorts Comments](https://img.shields.io/youtube/comments/VItEOPa7b58?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/VItEOPa7b58)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/VItEOPa7b58)
+
+```js
+/**
+ * debounce function to limit the rate at which a function is invoked
+ * @param {function} fn
+ * @param {number} delay
+ */
+function debounce(fn, delay) {
+  let id;
+  return function() {
+    // Clear previous timeout,
+    // to reset the delay
+    clearTimeout(id);
+
+    // Set a new timeout
+    id = setTimeout(fn, delay || 1000, ...arguments);
+  };
+}
+
+// Example usage:
+
+const searchHandler = (search) => {
+  console.log('Fetching database with query:' + search);
+};
+
+// swd -> search with debounce
+let swd = debounce(searchHandler);
+
+// Call without debounce
+swd('ja');
+swd('java');
+swd('javasc');
+swd('javascri');
+swd('javascript');
+```
+
 ### Serialize
 
 [![Shorts Views](https://img.shields.io/youtube/views/HOVlf_olxTc?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/HOVlf_olxTc)

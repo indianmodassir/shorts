@@ -19,7 +19,7 @@ Watch all Web shorts video on youtube see playlist [JavaScript Shorts](https://w
 
 Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/ZxOHPXOZ4q8)
 
-Download Zip [ZxOHPXOZ4q8.zip](https://github.com/indianmodassir/shorts/blob/main/source/ZxOHPXOZ4q8.zip)
+Download Zip <a href="https://github.com/indianmodassir/shorts/blob/main/source/ZxOHPXOZ4q8.zip" download="ZxOHPXOZ4q8">ZxOHPXOZ4q8.zip</a>
 
 ### Bounce Loader
 

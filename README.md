@@ -11,6 +11,56 @@
 
 Watch all Web shorts video on youtube see playlist [JavaScript Shorts](https://www.youtube.com/playlist?list=PLnnLdunPzY2t2iQ7X8BAUh4s8Yx-2KR7z)
 
+### Matrix Effect
+
+[![Shorts Views](https://img.shields.io/youtube/views/2RNt5-2CLzM?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/2RNt5-2CLzM)
+[![Shorts Likes](https://img.shields.io/youtube/likes/2RNt5-2CLzM?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/2RNt5-2CLzM)
+[![Shorts Comments](https://img.shields.io/youtube/comments/2RNt5-2CLzM?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/2RNt5-2CLzM)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/2RNt5-2CLzM)
+
+Download Zip <a href="https://github.com/indianmodassir/shorts/raw/refs/heads/main/source/2RNt5-2CLzM.zip" download="2RNt5-2CLzM">2RNt5-2CLzM.zip</a>
+
+### Analog Clock
+
+[![Shorts Views](https://img.shields.io/youtube/views/nd0clfsUOjw?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/nd0clfsUOjw)
+[![Shorts Likes](https://img.shields.io/youtube/likes/nd0clfsUOjw?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/nd0clfsUOjw)
+[![Shorts Comments](https://img.shields.io/youtube/comments/nd0clfsUOjw?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/nd0clfsUOjw)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/nd0clfsUOjw)
+
+Download Zip <a href="https://github.com/indianmodassir/shorts/raw/refs/heads/main/source/nd0clfsUOjw.zip" download="nd0clfsUOjw">nd0clfsUOjw.zip</a>
+
+### Calculator
+
+[![Shorts Views](https://img.shields.io/youtube/views/GiOkdt5HNgc?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/GiOkdt5HNgc)
+[![Shorts Likes](https://img.shields.io/youtube/likes/GiOkdt5HNgc?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/GiOkdt5HNgc)
+[![Shorts Comments](https://img.shields.io/youtube/comments/GiOkdt5HNgc?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/GiOkdt5HNgc)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/GiOkdt5HNgc)
+
+Download Zip <a href="https://github.com/indianmodassir/shorts/raw/refs/heads/main/source/GiOkdt5HNgc.zip" download="GiOkdt5HNgc">GiOkdt5HNgc.zip</a>
+
+### Code Editor
+
+[![Shorts Views](https://img.shields.io/youtube/views/2WQb3tVJe9k?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/2WQb3tVJe9k)
+[![Shorts Likes](https://img.shields.io/youtube/likes/2WQb3tVJe9k?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/2WQb3tVJe9k)
+[![Shorts Comments](https://img.shields.io/youtube/comments/2WQb3tVJe9k?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/2WQb3tVJe9k)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/2WQb3tVJe9k)
+
+Download Zip <a href="https://github.com/indianmodassir/shorts/raw/refs/heads/main/source/2WQb3tVJe9k.zip" download="2WQb3tVJe9k">2WQb3tVJe9k.zip</a>
+
+### SVG Loader
+
+[![Shorts Views](https://img.shields.io/youtube/views/DkJjhyrpREQ?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/DkJjhyrpREQ)
+[![Shorts Likes](https://img.shields.io/youtube/likes/DkJjhyrpREQ?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/DkJjhyrpREQ)
+[![Shorts Comments](https://img.shields.io/youtube/comments/DkJjhyrpREQ?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/DkJjhyrpREQ)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/DkJjhyrpREQ)
+
+Download Zip <a href="https://github.com/indianmodassir/shorts/raw/refs/heads/main/source/DkJjhyrpREQ.zip" download="DkJjhyrpREQ">DkJjhyrpREQ.zip</a>
+
 ### Draggable List
 
 [![Shorts Views](https://img.shields.io/youtube/views/ZxOHPXOZ4q8?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/ZxOHPXOZ4q8)

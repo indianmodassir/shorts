@@ -11,6 +11,16 @@
 
 Watch all Web shorts video on youtube see playlist [JavaScript Shorts](https://www.youtube.com/playlist?list=PLnnLdunPzY2t2iQ7X8BAUh4s8Yx-2KR7z)
 
+### Sound Wave Effect
+
+[![Shorts Views](https://img.shields.io/youtube/views/0QznJVfa-9o?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/0QznJVfa-9o)
+[![Shorts Likes](https://img.shields.io/youtube/likes/0QznJVfa-9o?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/0QznJVfa-9o)
+[![Shorts Comments](https://img.shields.io/youtube/comments/0QznJVfa-9o?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/0QznJVfa-9o)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/0QznJVfa-9o)
+
+Download Zip <a href="https://github.com/indianmodassir/shorts/raw/refs/heads/main/source/0QznJVfa-9o.zip" download="0QznJVfa-9o">0QznJVfa-9o.zip</a>
+
 ### Matrix Effect
 
 [![Shorts Views](https://img.shields.io/youtube/views/2RNt5-2CLzM?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/2RNt5-2CLzM)

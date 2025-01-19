@@ -9,7 +9,7 @@
 
 ## Web Shorts HTML, CSS or JavaScript
 
-Watch all Web shorts video on youtube see playlist [JavaScript Shorts](https://www.youtube.com/playlist?list=PLnnLdunPzY2t2iQ7X8BAUh4s8Yx-2KR7z)
+Watch all Web shorts video on youtube see playlist [Web Shorts](https://www.youtube.com/playlist?list=PLnnLdunPzY2t2iQ7X8BAUh4s8Yx-2KR7z)
 
 ### CSS Loader
 

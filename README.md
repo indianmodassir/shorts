@@ -11,6 +11,56 @@
 
 Watch all Web shorts video on youtube see playlist [JavaScript Shorts](https://www.youtube.com/playlist?list=PLnnLdunPzY2t2iQ7X8BAUh4s8Yx-2KR7z)
 
+### CSS Loader
+
+[![Shorts Views](https://img.shields.io/youtube/views/xNTnGptbhl0?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/xNTnGptbhl0)
+[![Shorts Likes](https://img.shields.io/youtube/likes/xNTnGptbhl0?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/xNTnGptbhl0)
+[![Shorts Comments](https://img.shields.io/youtube/comments/xNTnGptbhl0?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/xNTnGptbhl0)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/xNTnGptbhl0)
+
+Download Zip <a href="https://github.com/indianmodassir/shorts/raw/refs/heads/main/source/xNTnGptbhl0.zip" download="xNTnGptbhl0">xNTnGptbhl0.zip</a>
+
+### Crousel, Image Slider
+
+[![Shorts Views](https://img.shields.io/youtube/views/pS5geDvyYh0?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/pS5geDvyYh0)
+[![Shorts Likes](https://img.shields.io/youtube/likes/pS5geDvyYh0?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/pS5geDvyYh0)
+[![Shorts Comments](https://img.shields.io/youtube/comments/pS5geDvyYh0?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/pS5geDvyYh0)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/pS5geDvyYh0)
+
+Download Zip <a href="https://github.com/indianmodassir/shorts/raw/refs/heads/main/source/pS5geDvyYh0.zip" download="pS5geDvyYh0">pS5geDvyYh0.zip</a>
+
+### Horizontal Scroll with Mouse Wheel
+
+[![Shorts Views](https://img.shields.io/youtube/views/osnzwEcRMIg?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/osnzwEcRMIg)
+[![Shorts Likes](https://img.shields.io/youtube/likes/osnzwEcRMIg?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/osnzwEcRMIg)
+[![Shorts Comments](https://img.shields.io/youtube/comments/osnzwEcRMIg?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/osnzwEcRMIg)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/osnzwEcRMIg)
+
+Download Zip <a href="https://github.com/indianmodassir/shorts/raw/refs/heads/main/source/osnzwEcRMIg.zip" download="osnzwEcRMIg">osnzwEcRMIg.zip</a>
+
+### Password Show Hide in CSS
+
+[![Shorts Views](https://img.shields.io/youtube/views/WUkI4P_Nd18?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/WUkI4P_Nd18)
+[![Shorts Likes](https://img.shields.io/youtube/likes/WUkI4P_Nd18?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/WUkI4P_Nd18)
+[![Shorts Comments](https://img.shields.io/youtube/comments/WUkI4P_Nd18?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/WUkI4P_Nd18)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/WUkI4P_Nd18)
+
+Download Zip <a href="https://github.com/indianmodassir/shorts/raw/refs/heads/main/source/WUkI4P_Nd18.zip" download="WUkI4P_Nd18">WUkI4P_Nd18.zip</a>
+
+### Switch Color theme Light Mode and Dark Mode
+
+[![Shorts Views](https://img.shields.io/youtube/views/0dvP4h8NbK8?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/0dvP4h8NbK8)
+[![Shorts Likes](https://img.shields.io/youtube/likes/0dvP4h8NbK8?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/0dvP4h8NbK8)
+[![Shorts Comments](https://img.shields.io/youtube/comments/0dvP4h8NbK8?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/0dvP4h8NbK8)
+
+Watch video shorts on youtube click: [Watch Now](https://www.youtube.com/shorts/0dvP4h8NbK8)
+
+Download Zip <a href="https://github.com/indianmodassir/shorts/raw/refs/heads/main/source/0dvP4h8NbK8.zip" download="0dvP4h8NbK8">0dvP4h8NbK8.zip</a>
+
 ### Sound Wave Effect
 
 [![Shorts Views](https://img.shields.io/youtube/views/0QznJVfa-9o?style=flat-square&logo=youtube)](https://www.youtube.com/shorts/0QznJVfa-9o)
